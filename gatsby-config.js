@@ -1,10 +1,11 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 });
 
 module.exports = {
   siteMetadata: {
     title: "Renee Ross Books",
+    description: "Gothic Romance the Way You Remember it."
   },
   plugins: [
     {
