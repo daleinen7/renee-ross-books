@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: "Renee Ross Books",
@@ -6,7 +10,7 @@ module.exports = {
     {
       resolve: "gatsby-source-datocms",
       options: {
-        apiToken: "49267d67653bfa331902658e4d3bd6",
+        apiToken: process.env.API_TOKEN,
       },
     },
     "gatsby-plugin-styled-components",
