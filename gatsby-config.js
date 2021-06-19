@@ -33,5 +33,14 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      // Add google fonts here
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+          fonts: [
+              `poppins:300,400,500,600,700`       
+          ], display: 'swap'       
+      }
+    },
   ],
 };
