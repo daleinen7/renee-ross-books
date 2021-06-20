@@ -5,6 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import "@fontsource/tangerine"
 import "@fontsource/raleway"
 import Menu from './Menu';
+
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 
@@ -32,6 +33,7 @@ const Logo = styled.h1`
   font-size: 96px;
   margin: 2rem 0 2rem 2rem;
   text-shadow: 7px 7px 4px #202020;
+  text-align: center; 
 
   a {
     text-decoration: none;
@@ -56,6 +58,7 @@ export default function Layout({ children }) {
       <Logo><Link to='/'>Renee Ross Books</Link>
       <div role="doc-subtitle">Gothic Romance the Way You Remember...</div>
       </Logo>
+      
       <Menu/>
       <Container>{children}</Container>
     </>
