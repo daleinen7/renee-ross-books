@@ -6,6 +6,17 @@ import {
     NavDropdown
 } from 'react-bootstrap';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faFacebookSquare,
+  faAmazon,
+  faGoodreads,
+  faPinterestSquare,
+  faTwitterSquare
+} from '@fortawesome/free-brands-svg-icons';
+import {
+  faEnvelope
+} from '@fortawesome/free-solid-svg-icons';
 
 // const Navigation = styled.nav`
 //   ul{ 
@@ -53,8 +64,25 @@ export default function Menu() {
             </NavDropdown>
             
         </Nav>
-          <Nav className="ms-auto">
-            <Nav.Link>For Social Links</Nav.Link>
+            <Nav className="ms-auto">
+              <Nav.Link href="https://www.facebook.com/reneerossbooks">
+                <FontAwesomeIcon icon={faFacebookSquare} size="lg" />
+              </Nav.Link> &nbsp;
+              <Nav.Link href="https://www.amazon.com/Renee-Ross/e/B007WDCBI2/ref=sr_ntt_srch_lnk_1?qid=1503373408&sr=8-1">
+                <FontAwesomeIcon icon={faAmazon} size="lg" />
+              </Nav.Link>  &nbsp;
+              <Nav.Link href="mailto:reneerossbooks@gmail.com">
+                <FontAwesomeIcon icon={faEnvelope} size="lg" />
+              </Nav.Link>  &nbsp;
+              <Nav.Link href="https://www.goodreads.com/author/show/6037599.Renee_Ross">
+                <FontAwesomeIcon icon={faGoodreads} size="lg" />
+              </Nav.Link>  &nbsp;
+              <Nav.Link href="https://www.pinterest.com/ReneeRossBooks/">
+                <FontAwesomeIcon icon={faPinterestSquare} size="lg" />
+              </Nav.Link>  &nbsp;
+              <Nav.Link href="https://twitter.com/reneerossbooks">
+                <FontAwesomeIcon icon={faTwitterSquare} size="lg" />
+              </Nav.Link>  &nbsp;
             </Nav>
             </Navbar.Collapse>
         </Navbar>
