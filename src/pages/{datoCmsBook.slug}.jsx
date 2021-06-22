@@ -1,18 +1,20 @@
 import React from 'react';
 import {graphql} from 'gatsby';
 import { StructuredText } from 'react-datocms';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../components/Layout';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-  
+ 
 `;
 
 export default function Book({data}) {
-  console.log(data);
+  const image = getImage(data.datoCmsBook.bookCover)
   return(
     <Layout>
       <h2>{data.datoCmsBook.title}</h2>
+      <GatsbyImage image={image} alt={data.datoCmsBook.title} />
       <StructuredText data={data.datoCmsBook.description}/>
     </Layout>
   )
@@ -26,6 +28,12 @@ export const query = graphql`
       id
       description {
         value
+      }
+      bookCover {
+        gatsbyImageData(
+          width: 340
+          placeholder: BLURRED
+        )
       }
     }
   }
