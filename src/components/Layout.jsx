@@ -5,9 +5,14 @@ import { StaticImage } from 'gatsby-plugin-image';
 import "@fontsource/tangerine"
 import "@fontsource/raleway"
 import Menu from './Menu';
+import Subscribe from './Subscribe';
 
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
+import {
+    Row,
+    Col
+} from 'react-bootstrap';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -60,7 +65,14 @@ export default function Layout({ children }) {
       </Logo>
       
       <Menu/>
-      <Container>{children}</Container>
+      <Container>
+         <Row>
+            <Col sm={8}>{children}</Col>
+          <Col sm={4}>
+            <Subscribe />
+            </Col>
+          </Row>
+        </Container>
     </>
   )
 }
