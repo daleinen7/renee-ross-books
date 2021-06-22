@@ -5,7 +5,7 @@ import {
     Nav,
     NavDropdown
 } from 'react-bootstrap';
-import styled from 'styled-components';
+import '../styles/menu.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebookSquare,
@@ -18,25 +18,8 @@ import {
   faEnvelope
 } from '@fortawesome/free-solid-svg-icons';
 
-// const Navigation = styled.nav`
-//   ul{ 
-//     list-style-type: none;
-//   }
-
-//   a {
-//     color: #eae3e3;
-//     text-decoration: none;
-//     font-size: 1.2rem;
-//     &:hover {
-//       color: white;
-//       text-shadow: 2px 2px 40px #a81010;
-//     }
-//   }
-// `;
-
 export default function Menu() {
   return(
-
     <StaticQuery
       query={graphql`
         query HeadingQuery {
@@ -49,27 +32,24 @@ export default function Menu() {
         }
       `}
       render={data => (
-        // <Navigation>
-
-        <Navbar bg="dark" variant="dark" expand="lg" className="p-4 mb-4">
+        <Navbar bg="dark" variant="dark" expand="lg" className="p-4 mb-4 navi">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">About</Nav.Link>
-            <NavDropdown title="Books" id="navbarScrollingDropdown">   
-            {data.allDatoCmsBook.nodes.map(book => {
-              return <NavDropdown.Item href={`/${book.slug}`}>{book.title}</NavDropdown.Item>
-            })}
-            </NavDropdown>
-            
-        </Nav>
-            <Nav className="ms-auto">
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/about">About</Nav.Link>
+              <NavDropdown title="Books" id="navbarScrollingDropdown">   
+                {data.allDatoCmsBook.nodes.map(book => {
+                  return <NavDropdown.Item href={`/${book.slug}`}>{book.title}</NavDropdown.Item>
+                })}
+              </NavDropdown>
+            </Nav>
+            <Nav className="ms-auto social-links">
               <Nav.Link href="https://www.facebook.com/reneerossbooks">
                 <FontAwesomeIcon icon={faFacebookSquare} size="lg" />
               </Nav.Link> &nbsp;
               <Nav.Link href="https://www.amazon.com/Renee-Ross/e/B007WDCBI2/ref=sr_ntt_srch_lnk_1?qid=1503373408&sr=8-1">
-                <FontAwesomeIcon icon={faAmazon} size="lg" />
+              <FontAwesomeIcon icon={faAmazon} size="lg" />
               </Nav.Link>  &nbsp;
               <Nav.Link href="mailto:reneerossbooks@gmail.com">
                 <FontAwesomeIcon icon={faEnvelope} size="lg" />
@@ -84,7 +64,7 @@ export default function Menu() {
                 <FontAwesomeIcon icon={faTwitterSquare} size="lg" />
               </Nav.Link>  &nbsp;
             </Nav>
-            </Navbar.Collapse>
+          </Navbar.Collapse>
         </Navbar>
       )}
     />
