@@ -8,7 +8,7 @@ import Menu from './Menu';
 import Subscribe from './Subscribe';
 import Footer from './Footer';
 import styled from 'styled-components';
-import Container from 'react-bootstrap/Container';
+import Container from 'react-bootstrap/Container'
 import {
     Row,
     Col
@@ -54,11 +54,10 @@ const Logo = styled.h1`
   }
 `;
 
-
 export default function Layout({ children }) {
   return (
     <>
-      <StaticImage className="bg" src="../images/HeaderwotextDark.jpg" />
+      <StaticImage className="bg" src="../images/HeaderwotextDark.jpg" alt="" />
       <GlobalStyle />
       <Logo><Link to='/'>Renee Ross Books</Link>
         <div role="doc-subtitle">Gothic Romance the Way You Remember...</div>
@@ -67,8 +66,8 @@ export default function Layout({ children }) {
       <Container>
         <Row>
           <Col sm={8}>{children}</Col>
-        <Col sm={4}>
-          <Subscribe/>
+          <Col sm={4}>
+            <Subscribe/>
           </Col>
         </Row>
       </Container>
