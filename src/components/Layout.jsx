@@ -8,7 +8,7 @@ import Menu from './Menu';
 import Subscribe from './Subscribe';
 import Footer from './Footer';
 import styled from 'styled-components';
-import Container from 'react-bootstrap/Container';
+import Container from 'react-bootstrap/Container'
 import {
     Row,
     Col
