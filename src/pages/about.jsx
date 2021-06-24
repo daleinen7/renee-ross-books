@@ -4,12 +4,14 @@ import { StructuredText } from 'react-datocms';
 import Layout from '../components/Layout';
 import About from '../components/About';
 
+
 // markup
 const IndexPage = ({data}) => {
   // console.log(data.allDatoCmsHomepage.nodes.landingPageText);
   console.log(data);
   return (
     <Layout>
+      <h2>About</h2>
       <About aboutText={data.allDatoCmsHomepage.nodes[0].landingPageText}/>
     </Layout>
   )
@@ -18,21 +20,12 @@ const IndexPage = ({data}) => {
 export default IndexPage
 
 export const query = graphql`
-  query landingPage {
+  query LandingPage {
     allDatoCmsHomepage {
       nodes {
         landingPageText {
           value
         }
-      }
-    }
-    allDatoCmsBook {
-      nodes {
-        bookCover {
-          gatsbyImageData
-        }
-        slug
-        title
       }
     }
   }
