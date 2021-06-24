@@ -3,14 +3,16 @@ import {graphql} from 'gatsby';
 import { StructuredText } from 'react-datocms';
 import Layout from '../components/Layout';
 import About from '../components/About';
+import BookList from '../components/BookList';
+import LatestBook from '../components/LatestBook';
 
 // markup
 const IndexPage = ({data}) => {
-  // console.log(data.allDatoCmsHomepage.nodes.landingPageText);
-  console.log(data);
   return (
     <Layout>
+      <LatestBook latest={data.allDatoCmsBook.nodes[0]}/>
       <About aboutText={data.allDatoCmsHomepage.nodes[0].landingPageText}/>
+      <BookList books={data.allDatoCmsBook.nodes}/>
     </Layout>
   )
 }
