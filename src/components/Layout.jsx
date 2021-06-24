@@ -6,7 +6,7 @@ import "@fontsource/tangerine"
 import "@fontsource/raleway"
 import Menu from './Menu';
 import Subscribe from './Subscribe';
-
+import Footer from './Footer';
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 import {
@@ -61,18 +61,18 @@ export default function Layout({ children }) {
       <StaticImage className="bg" src="../images/HeaderwotextDark.jpg" />
       <GlobalStyle />
       <Logo><Link to='/'>Renee Ross Books</Link>
-      <div role="doc-subtitle">Gothic Romance the Way You Remember...</div>
+        <div role="doc-subtitle">Gothic Romance the Way You Remember...</div>
       </Logo>
-      
       <Menu/>
       <Container>
-         <Row>
-            <Col sm={8}>{children}</Col>
-          <Col sm={4}>
-            <Subscribe />
-            </Col>
-          </Row>
-        </Container>
+        <Row>
+          <Col sm={8}>{children}</Col>
+        <Col sm={4}>
+          <Subscribe/>
+          </Col>
+        </Row>
+      </Container>
+      <Footer/>
     </>
   )
 }
