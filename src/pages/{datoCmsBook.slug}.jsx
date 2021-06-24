@@ -3,11 +3,6 @@ import {graphql} from 'gatsby';
 import { StructuredText } from 'react-datocms';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../components/Layout';
-import styled from 'styled-components';
-
-const StyledDiv = styled.div`
- 
-`;
 
 export default function Book({data}) {
   const image = getImage(data.datoCmsBook.bookCover)

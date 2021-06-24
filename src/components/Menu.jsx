@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import {
     Navbar,
     Nav,
@@ -39,8 +39,8 @@ export default function Menu() {
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
               <NavDropdown title="Books" id="navbarScrollingDropdown">   
-                {data.allDatoCmsBook.nodes.map(book => {
-                  return <NavDropdown.Item href={`/${book.slug}`}>{book.title}</NavDropdown.Item>
+                {data.allDatoCmsBook.nodes.map((book, idx) => {
+                  return <NavDropdown.Item href={`/${book.slug}`} key={idx}>{book.title}</NavDropdown.Item>
                 })}
               </NavDropdown>
             </Nav>

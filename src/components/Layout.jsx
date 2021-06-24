@@ -54,11 +54,10 @@ const Logo = styled.h1`
   }
 `;
 
-
 export default function Layout({ children }) {
   return (
     <>
-      <StaticImage className="bg" src="../images/HeaderwotextDark.jpg" />
+      <StaticImage className="bg" src="../images/HeaderwotextDark.jpg" alt="" />
       <GlobalStyle />
       <Logo><Link to='/'>Renee Ross Books</Link>
         <div role="doc-subtitle">Gothic Romance the Way You Remember...</div>
@@ -67,8 +66,8 @@ export default function Layout({ children }) {
       <Container>
         <Row>
           <Col sm={8}>{children}</Col>
-        <Col sm={4}>
-          <Subscribe/>
+          <Col sm={4}>
+            <Subscribe/>
           </Col>
         </Row>
       </Container>
