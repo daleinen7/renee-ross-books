@@ -32,7 +32,7 @@ export default function Menu() {
         }
       `}
       render={data => (
-        <Navbar bg="dark" variant="dark" expand="lg" className="p-4 mb-4 navi">
+        <Navbar bg="secondary" variant="dark" expand="lg" className="p-4 mb-4 navi">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
