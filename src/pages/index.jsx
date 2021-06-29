@@ -16,16 +16,19 @@ const IndexPage = ({data}) => {
   return (
     <Layout>
       <Row className="spacer"> &nbsp; </Row>
-      <Row className="bg-dark p-4">
+      <Row className="bg-dark p-3 pb-0">
         <Col sm={8}>
           <LatestBook latest={data.allDatoCmsBook.nodes[0]} />
         </Col>
         <Col sm={4}>
-          <Subscribe />
+            <Subscribe />
         </Col>
       </Row>
-      <Row>
-        <About aboutText={data.allDatoCmsHomepage.nodes[0].landingPageText} />
+      <Row className="spacer"> &nbsp; </Row>
+      <Row className="bg-dark p-3 pb-0">
+        <Col md={{ span: 6, offset: 3 }}>
+          <About aboutText={data.allDatoCmsHomepage.nodes[0].landingPageText} />
+        </Col>
       </Row>
       <Row className="spacer"> &nbsp; </Row>
       <Row>
