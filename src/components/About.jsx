@@ -7,13 +7,12 @@ import {
   Fade
 } from 'react-bootstrap';
 
-export default function About({ aboutText }) {
-
+export default function About({ aboutTextIntro,aboutTextBody }) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <StructuredText data={aboutText}/> 
+      <StructuredText data={aboutTextIntro}/> 
       <Button
         onClick={() => setOpen(!open)}
         aria-controls="example-fade-text"
@@ -24,7 +23,7 @@ export default function About({ aboutText }) {
       </Button>
       <Fade in={open}>
         <div id="example-fade-text">
-          How the hell do I put some of it here?? 
+          <StructuredText data={aboutTextBody}/> 
         </div>
       </Fade>
     </>
