@@ -27,7 +27,10 @@ const IndexPage = ({data}) => {
       <Row className="spacer"> &nbsp; </Row>
       <Row className="bg-dark p-3 pb-0">
         <Col md={{ span: 6, offset: 3 }}>
-          <About aboutText={data.allDatoCmsHomepage.nodes[0].landingPageText} />
+          <About 
+            aboutTextIntro={data.allDatoCmsHomepage.nodes[0].landingPageText}
+            aboutTextBody={data.allDatoCmsHomepage.nodes[0].landingPageBody}
+          />
         </Col>
       </Row>
       <Row className="spacer"> &nbsp; </Row>
@@ -45,6 +48,9 @@ export const query = graphql`
     allDatoCmsHomepage {
       nodes {
         landingPageText {
+          value
+        }
+        landingPageBody {
           value
         }
       }
