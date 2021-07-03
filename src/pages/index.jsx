@@ -15,17 +15,20 @@ import {
 const IndexPage = ({data}) => {
   return (
     <Layout>
-      <Row className="spacer"> &nbsp; </Row>
-      <Row className="bg-dark p-3 pb-0">
-        <Col sm={8}>
+      <Row style={{backgroundColor: "#212629"}}>
+        <Col className="col-8">
           <LatestBook latest={data.allDatoCmsBook.nodes[0]} />
         </Col>
-        <Col sm={4}>
-            <Subscribe />
+        <Col className="col-4">
+          <Subscribe />
         </Col>
       </Row>
-      <Row className="spacer"> &nbsp; </Row>
-      <Row className="bg-dark p-3 pb-0">
+      <Row>
+        <Col className="spacer">
+          &nbsp; 
+        </Col>
+      </Row>
+      <Row>
         <Col md={{ span: 6, offset: 3 }}>
           <About 
             aboutTextIntro={data.allDatoCmsHomepage.nodes[0].landingPageText}
@@ -33,10 +36,7 @@ const IndexPage = ({data}) => {
           />
         </Col>
       </Row>
-      <Row className="spacer"> &nbsp; </Row>
-      <Row>
         <BookList books={data.allDatoCmsBook.nodes} />
-      </Row>
     </Layout>
   )
 }

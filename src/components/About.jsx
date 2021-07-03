@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { render } from 'react-dom';
 import { StructuredText } from 'react-datocms';
 import {
-  Collapse,
   Button,
   Fade
 } from 'react-bootstrap';
@@ -28,11 +26,4 @@ export default function About({ aboutTextIntro,aboutTextBody }) {
       </Fade>
     </>
   );
-  render(<About />);
 }
-  // return(
-  //   <>
-      
-  //     <StructuredText data={aboutText}/> 
-  //   </>
-  // )
