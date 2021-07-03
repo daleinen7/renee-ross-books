@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
 body { 
     background-image: url('../images/HeaderwotextDark.jpg'); 
     background-repeat: no-repeat;
@@ -6,6 +8,23 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+.nav-link { 
+    color: #ffffff !important;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase; 
+}
+
+.latest {
+  display: inline-block;
+  margin: 20px 0px 20px 20px; 
+}
+
+.latest p { 
+    padding: 20px 20px; 
+
 }
 
 .spacer { 
@@ -20,3 +39,8 @@ body {
         padding-bottom: 0px; 
 }
 
+
+$secondary: #613841;
+
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/_variables.scss";
