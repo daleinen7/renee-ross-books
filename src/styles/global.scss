@@ -55,6 +55,28 @@ input[type=text] {
     width: 100%;
 }
 
+.header {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #fff; 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+} 
+
+.header span { 
+    background:#20282a;  
+    padding:0 10px; 
+}
+
+.aboutbtn { 
+    background-color: #613841;
+    border: 1px solid #fff; 
+    border-radius: 5px;
+    color: #fff; 
+    padding: 2px 10px; 
+    width: 200px;
+}
+
 $secondary: #613841;
 $info: #c5c5c5; 
 

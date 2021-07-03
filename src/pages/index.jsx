@@ -28,8 +28,9 @@ const IndexPage = ({data}) => {
           &nbsp; 
         </Col>
       </Row>
-      <Row>
-        <Col md={{ span: 6, offset: 3 }}>
+      <Row style={{backgroundColor: "#212629"}}>
+        <Col md={{ span: 6, offset: 3 }} className="mt-5 mb-5">
+          <h2 className="header"><span>About the Author</span></h2>
           <About 
             aboutTextIntro={data.allDatoCmsHomepage.nodes[0].landingPageText}
             aboutTextBody={data.allDatoCmsHomepage.nodes[0].landingPageBody}
