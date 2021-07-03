@@ -23,11 +23,19 @@ const IndexPage = ({data}) => {
           <Subscribe />
         </Col>
       </Row>
+      <Row>
+        <Col className="spacer">
+          &nbsp; 
+        </Col>
+      </Row>
+      <Row>
+        <Col md={{ span: 6, offset: 3 }}>
           <About 
             aboutTextIntro={data.allDatoCmsHomepage.nodes[0].landingPageText}
             aboutTextBody={data.allDatoCmsHomepage.nodes[0].landingPageBody}
-        />
-        
+          />
+        </Col>
+      </Row>
         <BookList books={data.allDatoCmsBook.nodes} />
     </Layout>
   )
