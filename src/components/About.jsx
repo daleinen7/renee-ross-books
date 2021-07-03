@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "gatsby"; 
 import { StructuredText } from 'react-datocms';
 import {
   Button,
@@ -10,8 +11,14 @@ export default function About({ aboutTextIntro,aboutTextBody }) {
 
   return (
     <>
-      <StructuredText data={aboutTextIntro}/> 
-      <Button
+      <StructuredText data={aboutTextIntro} />
+      <Link to="/about">
+        <center>
+          <Button variant="secondary" className="aboutbtn">Read More</Button>
+        </center>
+      </Link>
+
+      {/* <Button
         onClick={() => setOpen(!open)}
         aria-controls="example-fade-text"
         aria-expanded={open}
@@ -23,7 +30,7 @@ export default function About({ aboutTextIntro,aboutTextBody }) {
         <div id="example-fade-text">
           <StructuredText data={aboutTextBody}/> 
         </div>
-      </Fade>
+      </Fade> */}
     </>
   );
 }
