@@ -37,7 +37,14 @@ const IndexPage = ({data}) => {
           />
         </Col>
       </Row>
+      <Row>
+        <Col className="spacer">
+          &nbsp; 
+        </Col>
+      </Row>
+      <Row style={{backgroundColor: "#212629"}}>
         <BookList books={data.allDatoCmsBook.nodes} />
+      </Row>
     </Layout>
   )
 }
