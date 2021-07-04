@@ -37,7 +37,7 @@ const IndexPage = ({data}) => {
           />
         </Col>
       </Row>
-        <BookList books={data.allDatoCmsBook.nodes} />
+      <BookList books={data.allDatoCmsBook.nodes} />
     </Layout>
   )
 }
