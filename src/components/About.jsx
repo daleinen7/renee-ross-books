@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "gatsby"; 
+import { StaticImage } from "gatsby-plugin-image"
 import { StructuredText } from 'react-datocms';
 import {
   Button,
@@ -11,6 +12,7 @@ export default function About({ aboutTextIntro,aboutTextBody }) {
 
   return (
     <>
+      <StaticImage src="../images/Author.jpg" alt="Author Renee Ross" />
       <StructuredText data={aboutTextIntro} />
       <Link to="/about">
         <center>
