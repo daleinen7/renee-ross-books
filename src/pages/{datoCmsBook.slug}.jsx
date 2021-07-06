@@ -20,7 +20,9 @@ export default function Book({data}) {
           <GatsbyImage
             image={image}
             alt={data.datoCmsBook.title}
-            style={{ boxShadow: "1px 1px 1px 1px gray, 10px 10px 0 1px white", margin: "20px 50px", float: "left"}}/>
+            style={{ boxShadow: "1px 1px 1px 1px gray, 10px 10px 0 1px white", margin: "20px 50px", float: "left" }}
+            className="zoom"
+            />
           <StructuredText data={data.datoCmsBook.description} />
         </Col>
       </Row>
