@@ -43,6 +43,7 @@ export default function Menu() {
                   return <NavDropdown.Item href={`/${book.slug}`} key={idx}>{book.title}</NavDropdown.Item>
                 })}
               </NavDropdown>
+              <Nav.Link href="/blog">Blog</Nav.Link>
             </Nav>
             <Nav className="ms-auto social-links">
               <Nav.Link href="https://www.facebook.com/reneerossbooks">
