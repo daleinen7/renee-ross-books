@@ -5,7 +5,7 @@ import About from '../components/About';
 
 
 // markup
-const IndexPage = ({data}) => {
+const about = ({data}) => {
   // console.log(data.allDatoCmsHomepage.nodes.landingPageText);
   console.log(data);
   return (
@@ -16,7 +16,7 @@ const IndexPage = ({data}) => {
   )
 }
 
-export default IndexPage
+export default about
 
 export const query = graphql`
   query LandingPage {

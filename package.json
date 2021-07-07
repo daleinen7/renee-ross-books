@@ -34,6 +34,7 @@
     "gatsby-plugin-styled-components": "^4.7.1",
     "gatsby-source-datocms": "^2.6.16",
     "gatsby-source-filesystem": "^3.7.1",
+    "gatsby-transformer-remark": "^4.6.0",
     "gatsby-transformer-sharp": "^3.7.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.6.1",
