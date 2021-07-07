@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import {
   Row, 
@@ -20,7 +21,9 @@ export default function BookList({books}) {
             </h4>
           </Row>
           <Row style={{ height: "400px", padding: "10px"}}>
-            <GatsbyImage image={getImage(book.bookCover)} className="zoom" alt={books.title} style={{ border: "1px solid #fff"}} />
+            <Link to={`/${book.slug}`}>
+              <GatsbyImage image={getImage(book.bookCover)} className="zoom" alt={books.title} style={{ border: "1px solid #fff"}} />
+            </Link>
             </Row>
       </Col>
     )
