@@ -63,15 +63,18 @@ export const query = graphql`
         }
       }
     }
-    allDatoCmsBook {
+    allDatoCmsBook(sort: {fields: meta___firstPublishedAt, order: DESC}) {
       nodes {
+        title
+        slug
+        description {
+          value
+        }
         bookCover {
           gatsbyImageData
         }
-        slug
-        title
-        description {
-          value
+        meta {
+          firstPublishedAt
         }
       }
     }
