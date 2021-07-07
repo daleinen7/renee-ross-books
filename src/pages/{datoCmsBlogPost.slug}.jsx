@@ -6,18 +6,16 @@ import Layout from '../components/Layout';
 
 export default function BlogPost({data}) {
   console.log(data);
-  // const image = getImage(data.datoCmsBook.bookCover)
+  const image = getImage(data.datoCmsBlogPost.image)
   return(
     <Layout>
-        <center>
-          <h2>{data.datoCmsBlogPost.title}</h2>
-        </center>
-        {/* <GatsbyImage
+        <h2>{data.datoCmsBlogPost.title}</h2>
+        <GatsbyImage
           image={image}
-          alt={data.datoCmsBook.title}
+          alt={data.datoCmsBlogPost.title}
           style={{ boxShadow: "1px 1px 1px 1px gray, 10px 10px 0 1px white", margin: "20px 50px", float: "left" }}
           className="zoom"
-        /> */}
+        />
         <StructuredText data={data.datoCmsBlogPost.content} />
     </Layout>
   )
@@ -31,12 +29,12 @@ export const blogQuery = graphql`
       content {
         value
       }
-      # bookCover {
-      #   gatsbyImageData(
-      #     width: 340
-      #     placeholder: BLURRED
-      #   )
-      # }
+      image {
+        gatsbyImageData(
+          width: 340
+          placeholder: BLURRED
+        )
+      }
     }
   }
 `;
