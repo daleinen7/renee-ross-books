@@ -9,7 +9,7 @@ export default function Footer() {
     <footer>
       <Row expand="lg" className="p-4 mb-4 navi bg-secondary footer">
         <p>Copyright &copy; {new Date().getFullYear()} Renee Ross All Rights Reserved</p><br />
-        <p>Website Magic performed by <Link to="https://www.dougleinen.com/">Doug the Magnificent</Link> & <Link to="https://stephrinehart.com">The Spectacular Stephanie</Link></p>
+        <p className="subscript">Website Magic performed by <Link to="https://www.dougleinen.com/">Doug the Magnificent</Link> & <Link to="https://stephrinehart.com">The Spectacular Stephanie</Link></p>
       </Row>
     </footer>
   )
