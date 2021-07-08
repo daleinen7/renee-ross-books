@@ -1,8 +1,7 @@
 import * as React from "react";
 import {graphql, Link} from 'gatsby';
 import Layout from '../components/Layout';
-import About from '../components/About';
-
+import moment from 'moment';
 
 // markup
 const blog = ({data}) => {
@@ -12,6 +11,7 @@ const blog = ({data}) => {
       {data.allDatoCmsBlogPost.nodes.map(post => (
         <li>
           <Link to={`/${post.slug}`}>{post.title}</Link>
+          {moment(post.meta.firstPublishedAt).format("MMM Do YY")}
         </li>
       ))}
     </Layout>
@@ -26,6 +26,9 @@ export const query = graphql`
     nodes {
       title
       slug
+      meta {
+        firstPublishedAt
+      }
       content {
         value
       }
