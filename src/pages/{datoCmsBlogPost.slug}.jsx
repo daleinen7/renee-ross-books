@@ -3,13 +3,14 @@ import {graphql} from 'gatsby';
 import { StructuredText } from 'react-datocms';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from '../components/Layout';
+import moment from 'moment';
 
 export default function BlogPost({data}) {
-  console.log(data);
   const image = getImage(data.datoCmsBlogPost.image)
   return(
     <Layout>
         <h2>{data.datoCmsBlogPost.title}</h2>
+        <p>{moment(data.datoCmsBlogPost.meta.firstPublishedAt).format("MMM Do YY")}</p>
         <GatsbyImage
           image={image}
           alt={data.datoCmsBlogPost.title}
@@ -28,6 +29,9 @@ export const blogQuery = graphql`
       slug
       content {
         value
+      }
+      meta {
+        firstPublishedAt
       }
       image {
         gatsbyImageData(
