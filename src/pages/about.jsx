@@ -2,16 +2,23 @@ import * as React from "react";
 import {graphql} from 'gatsby';
 import Layout from '../components/Layout';
 import { StructuredText } from 'react-datocms';
-
+import {
+  Row, 
+  Col
+} from 'react-bootstrap';
 
 // markup
 const about = ({data}) => {
   console.log(data);
   return (
     <Layout>
-      <h2>About</h2>
-      <StructuredText data={data.allDatoCmsHomepage.nodes[0].landingPageText.value} />
-      <StructuredText data={data.allDatoCmsHomepage.nodes[0].landingPageBody.value} />
+      <Row style={{ backgroundColor: "#212629" }}>
+        <Col  md={{ span: 8, offset: 2 }} className="mt-5 mb-5">
+          <h2>About</h2>
+          <StructuredText data={data.allDatoCmsHomepage.nodes[0].landingPageText.value} />
+          <StructuredText data={data.allDatoCmsHomepage.nodes[0].landingPageBody.value} />
+        </Col>
+      </Row>
     </Layout>
   )
 }

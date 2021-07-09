@@ -14,11 +14,11 @@ export default function BookList({books}) {
       return (
         <Col sm key={idx} bg="dark" className="mb-5">
           <Row className="p-3" style={{height: "100px", padding: "5px"}}>
-            <h4>
+            <h5>
               <center>
                 {book.title}
               </center>
-            </h4>
+            </h5>
           </Row>
           <Row style={{ height: "400px", padding: "10px"}}>
             <Link to={`/${book.slug}`}>
