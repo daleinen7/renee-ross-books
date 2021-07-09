@@ -87,6 +87,13 @@ input[type=text] {
   transform: scale(1.2); 
 }
 
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+
 .footer a { 
     color: #fff; 
 }
