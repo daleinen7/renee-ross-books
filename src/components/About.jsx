@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from "gatsby"; 
 import { StaticImage } from "gatsby-plugin-image"
 import { StructuredText } from 'react-datocms';
 import {
   Button,
-  Fade,
   Row,
   Col
 } from 'react-bootstrap';
 
-export default function About({ aboutTextIntro, aboutTextBody }) {
-  const [open, setOpen] = useState(false);
+export default function About({ aboutTextIntro }) {
 
   return (
     <>
@@ -29,20 +27,6 @@ export default function About({ aboutTextIntro, aboutTextBody }) {
           </Link>
         </Col>
       </Row>
-
-      {/* <Button
-        onClick={() => setOpen(!open)}
-        aria-controls="example-fade-text"
-        aria-expanded={open}
-        variant="light"
-      >
-        Read More
-      </Button>
-      <Fade in={open}>
-        <div id="example-fade-text">
-          <StructuredText data={aboutTextBody}/> 
-        </div>
-      </Fade> */}
     </>
   );
 }

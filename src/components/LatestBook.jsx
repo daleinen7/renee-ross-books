@@ -7,8 +7,8 @@ export default function LatestBook({latest}) {
 
   return(
     <section className="latest">
-      <h2>Latest Release</h2>
-      <h2>{latest.title}</h2>
+      <h3>Latest Release</h3>
+      <h4>{latest.title}</h4>
       <GatsbyImage
         image={image}
         alt={latest.title}

@@ -15,11 +15,11 @@ const GlobalStyle = createGlobalStyle`
     color: #FCFDFE;
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    h1, h2 {
+    h1 {
       font-family: 'Tangerine', script; 
     }
-    h3, h4, h5, h6 {
-      font-family: 'Cedarville Cursive', cursive;
+    h2, h3, h4, h5, h6 {
+      font-family: 'Roboto Slab', cursive;
       &:hover {
       text-shadow: 2px 2px 40px #a81010;
     }
