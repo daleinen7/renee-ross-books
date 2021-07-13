@@ -11,6 +11,10 @@ body {
     background-attachment: fixed;
 }
 
+.container { 
+    min-height: 100vh; 
+}
+
 .nav-link { 
     color: #ffffff !important;
     font-weight: bold;
@@ -88,7 +92,7 @@ input[type=text] {
 }
 
 footer {
-	position: fixed;
+	// position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 100%;
