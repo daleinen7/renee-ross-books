@@ -15,7 +15,7 @@ import {
 const IndexPage = ({data}) => {
   return (
     <Layout>
-      <Row style={{backgroundColor: "#212629"}}>
+      <Row style={{backgroundColor: "#000000"}}>
         <Col className="col-8">
           <LatestBook latest={data.allDatoCmsBook.nodes[0]} />
         </Col>
@@ -28,7 +28,7 @@ const IndexPage = ({data}) => {
           &nbsp; 
         </Col>
       </Row>
-      <Row style={{backgroundColor: "#212629"}}>
+      <Row style={{backgroundColor: "#000000"}}>
         <Col md={{ span: 6, offset: 3 }} className="mt-5 mb-5">
           <h3 className="header"><span>About the Author</span></h3>
           <About 
@@ -42,7 +42,7 @@ const IndexPage = ({data}) => {
           &nbsp; 
         </Col>
       </Row>
-      <Row style={{backgroundColor: "#212629"}}>
+      <Row style={{backgroundColor: "#000000"}}>
         <BookList books={data.allDatoCmsBook.nodes} />
       </Row>
     </Layout>

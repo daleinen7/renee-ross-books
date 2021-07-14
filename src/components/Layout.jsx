@@ -14,12 +14,15 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: #FCFDFE;
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400; 
     h1 {
       font-family: 'Tangerine', script; 
     }
     h2, h3, h4, h5, h6 {
-      font-family: 'Roboto Slab', cursive;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase; 
       &:hover {
       text-shadow: 2px 2px 40px #a81010;
     }
