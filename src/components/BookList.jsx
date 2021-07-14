@@ -22,9 +22,10 @@ export default function BookList({books}) {
           </Row>
           <Row style={{ height: "400px", padding: "10px"}}>
             <Link to={`/${book.slug}`}>
+              <span className="screen-reader-text">{books.title}</span>
               <GatsbyImage image={getImage(book.bookCover)} className="zoom" alt={books.title} style={{ border: "1px solid #fff"}} />
             </Link>
-            </Row>
+          </Row>
       </Col>
     )
             
