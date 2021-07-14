@@ -11,7 +11,7 @@ import {
 const about = ({data}) => {
   console.log(data);
   return (
-    <Layout>
+    <Layout title="Renee Ross Books | About" metaDescription="About Renee Ross the Author.">
       <Row style={{ backgroundColor: "#212629" }}>
         <Col  md={{ span: 8, offset: 2 }} className="mt-5 mb-5">
           <h2>About</h2>

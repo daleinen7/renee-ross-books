@@ -6,7 +6,7 @@ import moment from 'moment';
 // markup
 const blog = ({data}) => {
   return (
-    <Layout>
+    <Layout title="Renee Ross Books | Blog" metaDescription="List of blog posts for Renee Ross">
       <h2>Blog</h2>
       {data.allDatoCmsBlogPost.nodes.map(post => (
         <li>
