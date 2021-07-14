@@ -25,7 +25,12 @@ export default function BlogPost({data}) {
         />
           <StructuredText data={data.datoCmsBlogPost.content} />
         </Col>
-        </Row>
+      </Row>
+      <Row>
+        <Col className="spacer2">
+          &nbsp; 
+        </Col>
+      </Row>
     </Layout>
   )
 }
