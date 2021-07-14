@@ -11,7 +11,7 @@ import {
 export default function Book({data}) {
   const image = getImage(data.datoCmsBook.bookCover)
   return(
-    <Layout title={`Renee Ross Books | ${data.datoCmsBook.title}`} metaDescription={`About the book ${data.allDatoCmsBook.title} by Author Renee Ross`}>
+    <Layout title={`Renee Ross Books | ${data.datoCmsBook.title}`} metaDescription={`About the ${data.datoCmsBook.title} by Author Renee Ross`}>
       <Row style={{ backgroundColor: "#000" }} className="p-5 mt-4">
         <center>
           <h2>{data.datoCmsBook.title}</h2>
