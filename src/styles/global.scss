@@ -123,3 +123,9 @@ $info: #c5c5c5;
 
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap/scss/_variables.scss";
+
+@media screen {
+    .screen-reader-text {
+      display: none;
+    }
+  }

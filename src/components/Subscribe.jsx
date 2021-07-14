@@ -7,11 +7,11 @@ export default function Subscribe() {
   return(
     <Card style={{ width: '25rem', padding: '10px' }} className="shadow-sm p-3 mb-5 mt-5 bg-info text-dark rounded" border="secondary">
       <Card.Title>
-        <h5>
+        <h2>
           <center>
             Subscribe to our mailing list
           </center>
-        </h5>
+        </h2>
       </Card.Title>
         <Card.Text>    
           
