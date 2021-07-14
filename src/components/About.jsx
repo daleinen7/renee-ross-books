@@ -22,7 +22,7 @@ export default function About({ aboutTextIntro }) {
             <StructuredText data={aboutTextIntro} />
             <Link to="/about">
               <center>
-                <Button variant="secondary" className="aboutbtn">Read More</Button>
+                <Button variant="secondary" className="aboutbtn">More About Author</Button>
               </center>
           </Link>
         </Col>

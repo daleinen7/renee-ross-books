@@ -8,7 +8,7 @@ import moment from 'moment';
 export default function BlogPost({data}) {
   const image = getImage(data.datoCmsBlogPost.image)
   return(
-    <Layout>
+    <Layout title={`Renee Ross Books | ${data.datoCmsBlogPost.title}`} metaDescription={`"${data.allDatoCmsBlogPost.title}" by Author Renee Ross`}>
         <h2>{data.datoCmsBlogPost.title}</h2>
         <p>{moment(data.datoCmsBlogPost.meta.firstPublishedAt).format("MMM Do YY")}</p>
         <GatsbyImage
