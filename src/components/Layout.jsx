@@ -7,7 +7,7 @@ import Menu from './Menu';
 import Footer from './Footer';
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container'
-
+import { Helmet } from "react-helmet"
 
 
 const GlobalStyle = createGlobalStyle`
@@ -25,8 +25,8 @@ const GlobalStyle = createGlobalStyle`
       text-transform: uppercase;
       letter-spacing: .05rem; 
       &:hover {
-      text-shadow: 2px 2px 40px #a81010;
-    }
+        text-shadow: 2px 2px 40px #a81010;
+      }
     }
   }
 `
@@ -53,10 +53,20 @@ const Logo = styled.h1`
   }
 `;
 
-export default function Layout({ children }) {
+export default function Layout({ children, title, metaDescription }) {
   return (
     <>
       <GlobalStyle />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{title}</title>
+        <meta name="description" content={metaDescription} />
+        {/* htmlAttributes={{
+          lang: 'en',
+        }} */}
+
+        {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+      </Helmet>
       <Menu />
       <Container fluid className="min-vh-100">
       <Logo><Link to='/'>Renee Ross Books</Link>

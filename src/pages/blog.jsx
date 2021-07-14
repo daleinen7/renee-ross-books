@@ -10,7 +10,7 @@ import {
 // markup
 const blog = ({data}) => {
   return (
-    <Layout>
+    <Layout title="Renee Ross Books | Blog" metaDescription="List of blog posts for Renee Ross">
       <Row style={{ backgroundColor: "#000" }} >
         <Col  md={{ span: 8, offset: 2 }} className="mt-5 mb-5 blog">
           <h2>Blog Posts</h2>

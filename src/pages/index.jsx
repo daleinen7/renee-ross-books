@@ -14,7 +14,7 @@ import {
 // markup
 const IndexPage = ({data}) => {
   return (
-    <Layout>
+    <Layout title="Renee Ross Books" metaDescription="Gothic Romance the way you remember it. A site for Author Renee Ross.">
       <Row style={{backgroundColor: "#000000"}}>
         <Col className="col-8">
           <LatestBook latest={data.allDatoCmsBook.nodes[0]} />

@@ -20,13 +20,13 @@ export default function Subscribe() {
             <li>A chance to win a free Renee Ross Book</li>
             <li>Receive news about book releases, discounts, and freebies</li>
           </ul>
-          <form action="/success" method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact" >
+          <form method="POST" netlify-honeypot="bot-field" data-netlify="true" name="subscribe">
             <label htmlFor="email" style={{ fontWeight: 'bold' }}>Email</label><br />
             <input type="text" name="email" placeholder="E-mail address" style={{ padding: '3px', marginTop: '10px', marginBottom: '10px' }}/><br />
             <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" placeholder="contact" />
-          <center>
-            <input className="submitButton" type="submit" value="SIGN UP" />
+            <input type="hidden" name="form-name" value="contact" />
+            <center>
+              <input className="submitButton" type="submit" value="SIGN UP" />
             </center>
           </form>
         </Card.Text>

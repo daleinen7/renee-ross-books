@@ -12,7 +12,7 @@ import {
 export default function BlogPost({data}) {
   const image = getImage(data.datoCmsBlogPost.image)
   return(
-    <Layout>
+    <Layout title={`Renee Ross Books | ${data.datoCmsBlogPost.title}`} metaDescription={`"${data.allDatoCmsBlogPost.title}" by Author Renee Ross`}>
       <Row style={{ backgroundColor: "#000" }}>
         <Col  md={{ span: 8, offset: 2 }} className="mt-5 mb-5">
         <h2>{data.datoCmsBlogPost.title}</h2>
