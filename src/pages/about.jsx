@@ -12,7 +12,7 @@ const about = ({data}) => {
   console.log(data);
   return (
     <Layout>
-      <Row style={{ backgroundColor: "#212629" }}>
+      <Row style={{ backgroundColor: "#000" }}>
         <Col  md={{ span: 8, offset: 2 }} className="mt-5 mb-5">
           <h2>About</h2>
           <StructuredText data={data.allDatoCmsHomepage.nodes[0].landingPageText.value} />

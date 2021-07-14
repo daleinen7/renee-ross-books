@@ -14,15 +14,16 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: #FCFDFE;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200; 
     h1 {
       font-family: 'Tangerine', script; 
     }
     h2, h3, h4, h5, h6 {
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 700;
-      text-transform: uppercase; 
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05rem; 
       &:hover {
       text-shadow: 2px 2px 40px #a81010;
     }

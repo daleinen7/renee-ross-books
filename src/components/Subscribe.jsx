@@ -5,8 +5,14 @@ import {
 
 export default function Subscribe() {
   return(
-    <Card style={{ width: '18rem', padding: '10px' }} className="shadow-sm p-3 mb-5 mt-5 bg-info text-dark rounded" border="secondary">
-       <Card.Title><h3>Subscribe to our mailing list</h3></Card.Title>
+    <Card style={{ width: '25rem', padding: '10px' }} className="shadow-sm p-3 mb-5 mt-5 bg-info text-dark rounded" border="secondary">
+      <Card.Title>
+        <h5>
+          <center>
+            Subscribe to our mailing list
+          </center>
+        </h5>
+      </Card.Title>
         <Card.Text>    
           
           <ul>

@@ -12,7 +12,7 @@ export default function Book({data}) {
   const image = getImage(data.datoCmsBook.bookCover)
   return(
     <Layout>
-      <Row style={{ backgroundColor: "#212629" }} className="p-5 mt-4">
+      <Row style={{ backgroundColor: "#000" }} className="p-5 mt-4">
         <center>
           <h2>{data.datoCmsBook.title}</h2>
         </center>

@@ -4,20 +4,28 @@ import { StructuredText } from 'react-datocms';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from '../components/Layout';
 import moment from 'moment';
+import {
+  Row, 
+  Col
+} from 'react-bootstrap';
 
 export default function BlogPost({data}) {
   const image = getImage(data.datoCmsBlogPost.image)
   return(
     <Layout>
+      <Row style={{ backgroundColor: "#000" }}>
+        <Col  md={{ span: 8, offset: 2 }} className="mt-5 mb-5">
         <h2>{data.datoCmsBlogPost.title}</h2>
         <p>{moment(data.datoCmsBlogPost.meta.firstPublishedAt).format("MMM Do YY")}</p>
         <GatsbyImage
           image={image}
           alt={data.datoCmsBlogPost.title}
-          style={{ boxShadow: "1px 1px 1px 1px gray, 10px 10px 0 1px white", margin: "20px 50px", float: "left" }}
+          style={{ boxShadow: "1px 1px 15px 0px gray", margin: "20px 50px", float: "left" }}
           className="zoom"
         />
-        <StructuredText data={data.datoCmsBlogPost.content} />
+          <StructuredText data={data.datoCmsBlogPost.content} />
+        </Col>
+        </Row>
     </Layout>
   )
 }
