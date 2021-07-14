@@ -47,21 +47,28 @@ export default function Menu() {
             </Nav>
             <Nav className="ms-auto social-links">
               <Nav.Link href="https://www.facebook.com/reneerossbooks">
+                <span className="screen-reader-text">facebook</span>
                 <FontAwesomeIcon icon={faFacebookSquare} size="lg" alt="facebook"/>
               </Nav.Link> &nbsp;
               <Nav.Link href="https://www.amazon.com/Renee-Ross/e/B007WDCBI2/ref=sr_ntt_srch_lnk_1?qid=1503373408&sr=8-1">
+                <span className="screen-reader-text">Amazon</span>
                 <FontAwesomeIcon icon={faAmazon} size="lg" alt="Amazon"/>
               </Nav.Link>  &nbsp;
               <Nav.Link href="mailto:reneerossbooks@gmail.com">
+                <span className="screen-reader-text">Email</span>
                 <FontAwesomeIcon icon={faEnvelope} size="lg" alt="email"/>
               </Nav.Link>  &nbsp;
-              <Nav.Link href="https://www.goodreads.com/author/show/6037599.Renee_Ross">
+              <Nav.Link href="https://www.goodreads.com/author/show/6037599.Rene
+              e_Ross">
+                <span className="screen-reader-text">Goodreads</span>
                 <FontAwesomeIcon icon={faGoodreads} size="lg" alt="Good Reads"/>
               </Nav.Link>  &nbsp;
-              <Nav.Link href="https://www.pinterest.com/ReneeRossBooks/">
+              <Nav.Link href="https://www.pinterest.com/ReneeRossBooks/"> 
+                <span className="screen-reader-text">Pintrest</span>
                 <FontAwesomeIcon icon={faPinterestSquare} size="lg" alt="Pintrest"/>
               </Nav.Link>  &nbsp;
               <Nav.Link href="https://twitter.com/reneerossbooks">
+                <span className="screen-reader-text">Twitter</span>
                 <FontAwesomeIcon icon={faTwitterSquare} size="lg" alt="Twitter"/>
               </Nav.Link>  &nbsp;
             </Nav>

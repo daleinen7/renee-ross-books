@@ -57,14 +57,12 @@ export default function Layout({ children, title, metaDescription }) {
   return (
     <>
       <GlobalStyle />
-      <Helmet>
+      <Helmet htmlAttributes={{
+        lang: 'en',
+      }}>
         <meta charSet="utf-8" />
         <title>{title}</title>
         <meta name="description" content={metaDescription} />
-        {/* htmlAttributes={{
-          lang: 'en',
-        }} */}
-
         {/* <link rel="canonical" href="http://mysite.com/example" /> */}
       </Helmet>
       <Menu />
