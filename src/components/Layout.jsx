@@ -14,12 +14,16 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: #FCFDFE;
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200; 
     h1 {
       font-family: 'Tangerine', script; 
     }
     h2, h3, h4, h5, h6 {
-      font-family: 'Roboto Slab', cursive;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05rem; 
       &:hover {
         text-shadow: 2px 2px 40px #a81010;
       }
@@ -64,10 +68,10 @@ export default function Layout({ children, title, metaDescription }) {
         {/* <link rel="canonical" href="http://mysite.com/example" /> */}
       </Helmet>
       <Menu />
+      <Container fluid className="min-vh-100">
       <Logo><Link to='/'>Renee Ross Books</Link>
         <div role="doc-subtitle">Gothic Romance the Way You Remember...</div>
         </Logo>
-      <Container fluid>
         {children}
       </Container>
       <Footer/>

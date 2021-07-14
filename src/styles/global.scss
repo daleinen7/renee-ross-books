@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap');
 
 body { 
     background-image: url('../images/HeaderwotextDark.jpg'); 
@@ -36,7 +36,6 @@ body {
     max-height: 200px; 
     min-height: 200px; 
 }
-
 .card {
         margin: 0 auto; 
         float: none; 
@@ -52,7 +51,7 @@ input[type=text] {
 }
 
 .submitButton { 
-    background-color: #613841;
+    background-color: #73020c;
     border: 1px solid #fff; 
     border-radius: 5px;
     color: #fff; 
@@ -74,7 +73,7 @@ input[type=text] {
 }
 
 .aboutbtn { 
-    background-color: #613841;
+    background-color: #73020c;
     border: 1px solid #fff; 
     border-radius: 5px;
     color: #fff; 
@@ -110,7 +109,16 @@ footer {
     font-size: .8rem;
 }
 
-$secondary: #613841;
+.blog a { 
+    color: #fff; 
+}
+
+.blog a:hover { 
+    color: #fff; 
+}
+
+$dark: #000; 
+$secondary: #73020c;
 $info: #c5c5c5; 
 
 @import "~bootstrap/scss/bootstrap";
