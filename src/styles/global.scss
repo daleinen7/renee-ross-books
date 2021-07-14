@@ -36,11 +36,6 @@ body {
     max-height: 200px; 
     min-height: 200px; 
 }
-.spacer2 { 
-    max-height: 100px; 
-    min-height: 100px; 
-}
-
 .card {
         margin: 0 auto; 
         float: none; 
@@ -112,6 +107,14 @@ footer {
 
 .subscript { 
     font-size: .8rem;
+}
+
+.blog a { 
+    color: #fff; 
+}
+
+.blog a:hover { 
+    color: #fff; 
 }
 
 $dark: #000; 

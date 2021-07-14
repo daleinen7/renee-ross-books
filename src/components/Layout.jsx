@@ -58,10 +58,10 @@ export default function Layout({ children }) {
     <>
       <GlobalStyle />
       <Menu />
+      <Container fluid className="min-vh-100">
       <Logo><Link to='/'>Renee Ross Books</Link>
         <div role="doc-subtitle">Gothic Romance the Way You Remember...</div>
         </Logo>
-      <Container fluid>
         {children}
       </Container>
       <Footer/>

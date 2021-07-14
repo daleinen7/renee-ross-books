@@ -26,11 +26,6 @@ export default function Book({data}) {
           <StructuredText data={data.datoCmsBook.description} />
         </Col>
       </Row>
-      <Row>
-        <Col className="spacer2">
-          &nbsp; 
-        </Col>
-      </Row>
     </Layout>
   )
 }
