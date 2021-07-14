@@ -7,17 +7,14 @@ export default function LatestBook({latest}) {
 
   return(
     <section className="latest">
-      <h3>Latest Release</h3>
-      <h4>{latest.title}</h4>
+      <h2>Latest Release</h2>
+      <h3>{latest.title}</h3>
       <GatsbyImage
         image={image}
         alt={latest.title}
         style={{ boxShadow: "1px 1px 15px 0px gray", margin: "20px 50px", float: "left"}}
       />
-      <p>
-        <StructuredText data={latest.description.value} />
-      </p>
-
+      <StructuredText data={latest.description.value} />
     </section>
   )
 }
