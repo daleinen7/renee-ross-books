@@ -56,6 +56,7 @@ const Logo = styled.h1`
 export default function Layout({ children, title, metaDescription }) {
   return (
     <>
+      <Container fluid className="min-vh-100">
       <GlobalStyle />
       <Helmet htmlAttributes={{
         lang: 'en',
@@ -66,7 +67,6 @@ export default function Layout({ children, title, metaDescription }) {
         {/* <link rel="canonical" href="http://mysite.com/example" /> */}
       </Helmet>
       <Menu />
-      <Container fluid className="min-vh-100">
       <Logo><Link to='/'>Renee Ross Books</Link>
         <div role="doc-subtitle">Gothic Romance the Way You Remember...</div>
         </Logo>

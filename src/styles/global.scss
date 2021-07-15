@@ -15,6 +15,17 @@ body {
     min-height: 100vh; 
 }
 
+div.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0; 
+    margin-right: 0; 
+}
+
+.navbar { 
+    width: 100vw; 
+}
+
 .nav-link { 
     color: #ffffff !important;
     font-weight: bold;
@@ -83,6 +94,8 @@ input[type=text] {
 
 .book-title {
     font-size: 1.25rem;
+    min-height: 75px; 
+    max-height: 75px; 
 }
 
 .zoom {
