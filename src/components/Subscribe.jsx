@@ -5,7 +5,7 @@ import {
 
 export default function Subscribe() {
   return(
-    <Card style={{ width: '25rem', padding: '10px' }} className="shadow-sm p-3 mb-5 mt-5 bg-info text-dark rounded" border="secondary">
+    <Card style={{ width: '90%', padding: '10px' }} className="shadow-sm p-3 mb-5 mt-5 bg-info text-dark rounded" border="secondary">
       <Card.Title>
         <h2>
           <center>

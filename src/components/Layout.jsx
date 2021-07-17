@@ -7,6 +7,7 @@ import Menu from './Menu';
 import Footer from './Footer';
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container'
+import { Row } from 'react-bootstrap';
 import { Helmet } from "react-helmet"
 
 
@@ -18,8 +19,12 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 200; 
     h1 {
       font-family: 'Tangerine', script; 
+      margin: 0;
+      padding: 0;
     }
     h2, h3, h4, h5, h6 {
+      margin: 0;
+      padding: 0;
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       text-transform: uppercase;
@@ -56,23 +61,27 @@ const Logo = styled.h1`
 export default function Layout({ children, title, metaDescription }) {
   return (
     <>
-      <Container fluid className="min-vh-100">
-      <GlobalStyle />
-      <Helmet htmlAttributes={{
-        lang: 'en',
-      }}>
-        <meta charSet="utf-8" />
-        <title>{title}</title>
-        <meta name="description" content={metaDescription} />
-        {/* <link rel="canonical" href="http://mysite.com/example" /> */}
-      </Helmet>
-      <Menu />
-      <Logo><Link to='/'>Renee Ross Books</Link>
-        <div role="doc-subtitle">Gothic Romance the Way You Remember...</div>
-        </Logo>
+      <Container className="min-vh-100">
+        <GlobalStyle />
+        <Helmet htmlAttributes={{
+          lang: 'en',
+        }}>
+          <meta charSet="utf-8" />
+          <title>{title}</title>
+          <meta name="description" content={metaDescription} />
+          {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+        </Helmet>
+        <Row>
+          <Menu/>  
+        </Row>
+        <Row>
+          <Logo><Link to='/'>Renee Ross Books</Link>
+            <div role="doc-subtitle">Gothic Romance the Way You Remember...</div>
+          </Logo>
+        </Row>
         {children}
+        <Footer/>
       </Container>
-      <Footer/>
     </>
   )
 }

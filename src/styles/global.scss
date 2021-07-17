@@ -13,6 +13,13 @@ body {
 
 .container { 
     min-height: 100vh; 
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.row {
+    overflow: hidden;
+    margin-right: 0;
 }
 
 div.container-fluid {
