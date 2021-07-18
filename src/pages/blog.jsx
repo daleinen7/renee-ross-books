@@ -12,13 +12,22 @@ const blog = ({data}) => {
   return (
     <Layout title="Renee Ross Books | Blog" metaDescription="List of blog posts for Renee Ross">
       <Row style={{ backgroundColor: "#000" }} >
-        <Col  md={{ span: 8, offset: 2 }} className="mt-5 mb-5 blog">
-          <h2>Blog Posts</h2>
-          {data.allDatoCmsBlogPost.nodes.map((post, idx) => (
-            <li key={idx}>
-              <Link to={`/${post.slug}`}>{post.title}</Link> - Published on {moment(post.meta.firstPublishedAt).format("MMM Do 'YY")}
-            </li>
-          ))}
+        <Col md={{ span: 8, offset: 2 }} className="mt-5 mb-5 blog">
+          <h3 className="header"><span>Blog Posts</span></h3>
+        </Col>
+        <Col md={{ span: 8, offset: 2 }} className="mt-5 mb-5 blog">
+          <ul>
+            {data.allDatoCmsBlogPost.nodes.map((post, idx) => (
+              <li key={idx}>
+                <Link to={`/${post.slug}`}>{post.title}</Link> - Published on {moment(post.meta.firstPublishedAt).format("MMM Do 'YY")}
+              </li>
+            ))}
+          </ul>
+        </Col>
+      </Row>
+      <Row>
+        <Col className="spacer2">
+          &nbsp; 
         </Col>
       </Row>
     </Layout>

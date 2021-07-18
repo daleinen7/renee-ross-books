@@ -13,8 +13,10 @@ const about = ({data}) => {
   return (
     <Layout title="Renee Ross Books | About" metaDescription="About Renee Ross the Author.">
       <Row style={{ backgroundColor: "#000" }}>
-        <Col  md={{ span: 8, offset: 2 }} className="mt-5 mb-5">
-          <h2>About</h2>
+        <Col md={{ span: 8, offset: 2 }} className="mt-5 mb-5">
+          </Col>
+          <h3 className="header"><span>About the Author</span></h3>
+        <Col md={{ span: 8, offset: 2 }} className="mt-5 mb-5">
           <StructuredText data={data.allDatoCmsHomepage.nodes[0].landingPageText.value} />
           <StructuredText data={data.allDatoCmsHomepage.nodes[0].landingPageBody.value} />
         </Col>
