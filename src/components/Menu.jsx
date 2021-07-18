@@ -37,7 +37,7 @@ export default function Menu() {
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
-              <NavDropdown title="Dropdown" id="collasible-nav-dropdown">  
+              <NavDropdown title="Books" id="collasible-nav-dropdown">  
                 {data.allDatoCmsBook.nodes.map((book, idx) => {
                   return <NavDropdown.Item href={`/${book.slug}`} key={idx}>{book.title}</NavDropdown.Item>
                 })}
