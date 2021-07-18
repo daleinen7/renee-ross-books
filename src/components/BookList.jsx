@@ -32,21 +32,21 @@ export default function BookList({books}) {
             sm={12}
             xs={12}
           className="mb-5">
-          <Row className="mt-5">
-            <h3 className="book-title">
-              <center>
-                {book.title}
-              </center>
-            </h3>
+            <Row className="mt-5">
+              <h3 className="book-title">
+                <center>
+                  {book.title}
+                </center>
+              </h3>
 
-            <Link to={`/${book.slug}`} alt={book.bookCover}>
+              <Link to={`/${book.slug}`} alt={book.bookCover}>
                 <span className="screen-reader-text">{books.title}</span>
                 <center>
                   <GatsbyImage image={getImage(book.bookCover)} className="zoom" alt={books.title} style={{ border: "1px solid #fff" }} />
-                  </center>
+                </center>
               </Link>
-          </Row>
-              </Col>
+            </Row>
+          </Col>
         </>
     )
             
