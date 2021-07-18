@@ -5,7 +5,6 @@ import {
     Nav,
     NavDropdown
 } from 'react-bootstrap';
-import '../styles/menu.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebookSquare,
@@ -45,7 +44,7 @@ export default function Menu() {
               </NavDropdown>
               <Nav.Link href="/blog">Blog</Nav.Link>
             </Nav>
-            <Nav className="ms-auto social-links">
+            <Nav id="social-links" className="ms-auto">
               <Nav.Link href="https://www.facebook.com/reneerossbooks">
                 <span className="screen-reader-text">facebook</span>
                 <FontAwesomeIcon icon={faFacebookSquare} size="lg" alt="facebook"/>
