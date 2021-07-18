@@ -9,6 +9,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 .container { 
@@ -82,12 +83,12 @@ input[type=text] {
    text-align: center; 
    border-bottom: 1px solid #fff; 
    line-height: 0.1em;
-   margin: 10px 0 20px; 
+   margin: 20px 0 20px; 
 } 
 
 .header span { 
     background:#20282a;  
-    padding:0 10px; 
+    padding: 10px 10px; 
 }
 
 .aboutbtn { 
