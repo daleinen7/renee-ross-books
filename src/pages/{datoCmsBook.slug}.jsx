@@ -13,9 +13,7 @@ export default function Book({data}) {
   return(
     <Layout title={`Renee Ross Books | ${data.datoCmsBook.title}`} metaDescription={`About the ${data.datoCmsBook.title} by Author Renee Ross`}>
       <Row style={{ backgroundColor: "#000" }} className="p-5 mt-4">
-        <center>
-          <h2>{data.datoCmsBook.title}</h2>
-        </center>
+        <h3 className="header"><span>{data.datoCmsBook.title}</span></h3>
         <Col  md={{ span: 8, offset: 2 }} className="mt-5 mb-5">
           <GatsbyImage
             image={image}
