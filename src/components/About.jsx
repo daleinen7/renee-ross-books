@@ -19,11 +19,9 @@ export default function About({ aboutTextIntro }) {
           </center>
         </Col>
         <Col className="mt-5">
-            <StructuredText data={aboutTextIntro} />
-            <Link to="/about">
-              <center>
-                <Button variant="secondary" className="aboutbtn">More About Author</Button>
-              </center>
+          <StructuredText data={aboutTextIntro} />
+          <Link to="/about">
+              <Button variant="secondary" className="aboutbtn">More About Author</Button>
           </Link>
         </Col>
       </Row>

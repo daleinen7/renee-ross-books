@@ -14,13 +14,15 @@ const blog = ({data}) => {
       <Row style={{ backgroundColor: "#000" }} >
         <Col md={{ span: 8, offset: 2 }} className="mt-5 mb-5 blog">
           <h3 className="header"><span>Blog Posts</span></h3>
-          </Col>
+        </Col>
         <Col md={{ span: 8, offset: 2 }} className="mt-5 mb-5 blog">
-          {data.allDatoCmsBlogPost.nodes.map(post => (
-            <li>
-              <Link to={`/${post.slug}`}>{post.title}</Link> - Published on {moment(post.meta.firstPublishedAt).format("MMM Do 'YY")}
-            </li>
-          ))}
+          <ul>
+            {data.allDatoCmsBlogPost.nodes.map((post, idx) => (
+              <li key={idx}>
+                <Link to={`/${post.slug}`}>{post.title}</Link> - Published on {moment(post.meta.firstPublishedAt).format("MMM Do 'YY")}
+              </li>
+            ))}
+          </ul>
         </Col>
       </Row>
       <Row>

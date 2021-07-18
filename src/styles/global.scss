@@ -41,6 +41,13 @@ div.container-fluid {
     text-transform: uppercase; 
 }
 
+#social-links {
+    @media(max-width: 991px) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
 .latest {
   display: inline-block;
   margin: 20px 0px 20px 20px; 
