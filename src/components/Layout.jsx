@@ -74,7 +74,7 @@ export default function Layout({ children, title, metaDescription }) {
         <Row>
           <Menu/>  
         </Row>
-        <Row>
+        <Row className="logo-row">
           <Logo><Link to='/'>Renee Ross Books</Link>
             <div role="doc-subtitle">Gothic Romance the Way You Remember...</div>
           </Logo>

@@ -31,7 +31,7 @@ export default function Menu() {
         }
       `}
       render={data => (
-        <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark" className="p-5">
+        <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark" className="p-3">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
