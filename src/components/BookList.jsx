@@ -20,7 +20,7 @@ const StyledDiv = styled.section`
 export default function BookList({books}) {
   return (
   <>
-    <h2><center>Book List</center></h2>
+    <h3 className="header"><span>Book List</span></h3>
     { books.map((book, idx) => {
       return (
         <>
@@ -32,7 +32,7 @@ export default function BookList({books}) {
             sm={12}
             xs={12}
           className="mb-5">
-          <Row>
+          <Row className="mt-5">
             <h3 className="book-title">
               <center>
                 {book.title}

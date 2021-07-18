@@ -15,11 +15,19 @@ import {
 const IndexPage = ({data}) => {
   return (
     <Layout title="Renee Ross Books" metaDescription="Gothic Romance the way you remember it. A site for Author Renee Ross.">
-      <Row style={{backgroundColor: "#000000"}}>
-        <Col className="col-8">
+      <Row style={{ backgroundColor: "#000000" }}>
+        <Col className="col-8"
+            lg={8}
+            md={12}
+            sm={12}
+            xs={12}>
           <LatestBook latest={data.allDatoCmsBook.nodes[0]} />
         </Col>
-        <Col className="col-4">
+        <Col className="col-4"
+            lg={4}
+            md={12}
+            sm={12}
+            xs={12}>
           <Subscribe />
         </Col>
       </Row>
@@ -42,7 +50,7 @@ const IndexPage = ({data}) => {
           &nbsp; 
         </Col>
       </Row>
-      <Row style={{backgroundColor: "#000000"}}>
+      <Row style={{backgroundColor: "#000000"}} className="mt-5 mb-5 pt-5">
         <BookList books={data.allDatoCmsBook.nodes} />
       </Row>
     </Layout>

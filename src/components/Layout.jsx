@@ -61,7 +61,7 @@ const Logo = styled.h1`
 export default function Layout({ children, title, metaDescription }) {
   return (
     <>
-      <Container className="min-vh-100">
+      <Container fluid className="min-vh-100">
         <GlobalStyle />
         <Helmet htmlAttributes={{
           lang: 'en',
