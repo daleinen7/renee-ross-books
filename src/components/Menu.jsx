@@ -31,13 +31,13 @@ export default function Menu() {
         }
       `}
       render={data => (
-        <Navbar bg="secondary" variant="dark" expand="lg" className="p-4 mb-4 navi">
+        <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark" className="p-3">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
+            <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
-              <NavDropdown title="Books" id="navbarScrollingDropdown">   
+              <NavDropdown title="Dropdown" id="collasible-nav-dropdown">  
                 {data.allDatoCmsBook.nodes.map((book, idx) => {
                   return <NavDropdown.Item href={`/${book.slug}`} key={idx}>{book.title}</NavDropdown.Item>
                 })}
@@ -47,7 +47,7 @@ export default function Menu() {
             <Nav id="social-links" className="ms-auto">
               <Nav.Link href="https://www.facebook.com/reneerossbooks">
                 <span className="screen-reader-text">facebook</span>
-                <FontAwesomeIcon icon={faFacebookSquare} size="lg" alt="facebook"/>
+                <FontAwesomeIcon icon={faFacebookSquare} size="lg" aria-label="facebook"/>
               </Nav.Link> &nbsp;
               <Nav.Link href="https://www.amazon.com/Renee-Ross/e/B007WDCBI2/ref=sr_ntt_srch_lnk_1?qid=1503373408&sr=8-1">
                 <span className="screen-reader-text">Amazon</span>

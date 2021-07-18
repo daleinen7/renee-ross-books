@@ -9,7 +9,9 @@ export default function LatestBook({latest}) {
     <section className="latest">
       <h3 className="header"><span>Latest Release</span></h3>
       <br />
-      <h3>{latest.title}</h3>
+      <center>
+        <h3>{latest.title}</h3>
+        </center>
       <GatsbyImage
         image={image}
         alt={latest.title}

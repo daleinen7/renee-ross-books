@@ -12,15 +12,12 @@ body {
     overflow-x: hidden;
 }
 
-.container { 
-    min-height: 100vh; 
-    max-width: 100%;
-    overflow: hidden;
+h2 { 
+    font-size: 20px !important;
 }
 
-.row {
-    overflow: hidden;
-    margin-right: 0;
+.container { 
+    min-height: 100vh; 
 }
 
 div.container-fluid {
@@ -45,6 +42,16 @@ div.container-fluid {
     @media(max-width: 991px) {
         display: flex;
         flex-direction: row;
+        width: 100vw; 
+    }
+}
+
+.logo-row {
+    @media(max-width: 600px) {
+        height: 350px; 
+        align: center; 
+        margin-left: 0;
+        padding-left: 0; 
     }
 }
 
