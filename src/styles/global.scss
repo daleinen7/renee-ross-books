@@ -20,17 +20,19 @@ h2 {
     min-height: 100vh; 
 }
 
-// div.container-fluid {
-//     padding-left: 0;
-//     padding-right: 0;
-//     margin-left: 0; 
-//     margin-right: 0; 
-// }
+div.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0; 
+    margin-right: 0; 
+}
 
 .logo-row { 
     width: 100vw; 
+
     @media(max-width: 991px) {
-        width: 100vw;
+        width: 100vw; 
+
     }
 }
 
