@@ -28,10 +28,10 @@ div.container-fluid {
 }
 
 .logo-row { 
-    width: 100vw; 
+    width: 100%; 
 
     @media(max-width: 991px) {
-        width: 100vw; 
+        width: 100%; 
 
     }
 }
