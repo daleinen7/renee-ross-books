@@ -56,12 +56,6 @@ const Logo = styled.h1`
     font-family: 'Raleway', serif;
     font-size: 1.3rem;
   }
-
-  @media(max-width: 991px) {
-    font-size: 70px;
-    text-shadow: 7px 7px 4px #202020;
-    text-align: center;
-}
 `;
 
 export default function Layout({ children, title, metaDescription }) {
