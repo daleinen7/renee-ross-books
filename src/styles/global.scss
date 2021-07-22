@@ -159,10 +159,23 @@ footer {
 
 .blog a { 
     color: #fff; 
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: bold; 
+    text-decoration: none;
 }
 
 .blog a:hover { 
     color: #fff; 
+}
+
+.blog-title { 
+    color: #fff; 
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: bold; 
+    text-decoration: none;
+    padding-bottom: 30px; 
 }
 
 $dark: #000; 

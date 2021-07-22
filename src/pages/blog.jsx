@@ -4,7 +4,8 @@ import Layout from '../components/Layout';
 import moment from 'moment';
 import {
   Row, 
-  Col
+  Col,
+  Button
 } from 'react-bootstrap';
 
 // markup
@@ -15,15 +16,28 @@ const blog = ({data}) => {
         <Col md={{ span: 8, offset: 2 }} className="mt-5 mb-5 blog">
           <h3 className="header"><span>Blog Posts</span></h3>
         </Col>
-        <Col md={{ span: 8, offset: 2 }} className="mt-5 mb-5 blog">
-          <ul>
             {data.allDatoCmsBlogPost.nodes.map((post, idx) => (
-              <li key={idx}>
-                <Link to={`/${post.slug}`}>{post.title}</Link> - Published on {moment(post.meta.firstPublishedAt).format("MMM Do 'YY")}
-              </li>
-            ))}
-          </ul>
+              <Col
+                xs={6}
+                md={4}
+                className="m-5 blog p-5"
+                style={{ backgroundColor: "gray"}}
+                key={idx}>
+                published on {moment(post.meta.firstPublishedAt).format("MMM Do 'YY")}
+                <br />
+                <span className="blog-title">
+                  {post.title}
+                </span>
+                <Link to={`/${post.slug}`} className="blog-link">
+                  <br />
+                  <div className="d-grid gap-2 mt-3">
+                    <Button variant="secondary">
+                      Read here
+                    </Button>
+                  </div>
+                </Link>
         </Col>
+            ))}
       </Row>
       <Row>
         <Col className="spacer2">
