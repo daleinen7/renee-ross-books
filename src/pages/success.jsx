@@ -1,9 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
-// import TAFHepub from "../freeBook/Terror_at_Fairmont_Hall.epub";
-// import TAFHmobi from "../freeBook/Terror_at_Fairmont_Hall.mobi";
-// import TAFHpdf from "../freeBook/Terror_at_Fairmont_Hall.pdf";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 
 export default function success() {
   return (
@@ -13,19 +10,25 @@ export default function success() {
           <h2>Thank you for subscribing to our mailing list!</h2>
           <p>Please enjoy this free novella!</p>
           <ul>
-            <li>
+            <li className="p-2">
               <a href={"/public/Terror_at_Fairmont_Hall.epub"} download>
-                Terror at Fairmont Hall (epub)
+                <Button variant="secondary">
+                  Download "Terror at Fairmont Hall" (epub)
+                </Button>
               </a>
             </li>
-            <li>
+            <li className="p-2">
               <a href={"/public/Terror_at_Fairmont_Hall.mobi"} download>
-                Terror at Fairmont Hall (mobi)
+                <Button variant="secondary">
+                  Download "Terror at Fairmont Hall" (mobi)
+                </Button>
               </a>
             </li>
-            <li>
-              <a href={"/public/Terror_at_Fairmont_Hall.pdf"} download>
-                Terror at Fairmont Hall (pdf)
+            <li className="p-2">
+              <a href={"/public/Terror_at_Fairmont_Hall.pdf "} download>
+                <Button variant="secondary">
+                  Download "Terror at Fairmont Hall" (pdf)
+                </Button>
               </a>
             </li>
           </ul>

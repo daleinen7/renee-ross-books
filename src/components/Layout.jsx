@@ -1,15 +1,14 @@
-import React from "react"
-import { Link } from 'gatsby';
-import { createGlobalStyle } from "styled-components"
+import React from "react";
+import { Link } from "gatsby";
+import { createGlobalStyle } from "styled-components";
 import "@fontsource/tangerine";
 import "@fontsource/raleway";
-import Menu from './Menu';
-import Footer from './Footer';
-import styled from 'styled-components';
-import Container from 'react-bootstrap/Container'
-import { Row } from 'react-bootstrap';
-import { Helmet } from "react-helmet"
-
+import Menu from "./Menu";
+import Footer from "./Footer";
+import styled from "styled-components";
+import Container from "react-bootstrap/Container";
+import { Row } from "react-bootstrap";
+import { Helmet } from "react-helmet";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -29,12 +28,9 @@ const GlobalStyle = createGlobalStyle`
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: .05rem; 
-      &:hover {
-        text-shadow: 2px 2px 40px #a81010;
-      }
     }
   }
-`
+`;
 
 const Logo = styled.h1`
   font-size: 96px;
@@ -42,7 +38,7 @@ const Logo = styled.h1`
   text-shadow: 7px 7px 4px #202020;
   text-align: center;
   min-height: 200px;
-  max-height: 200px; 
+  max-height: 200px;
 
   a {
     text-decoration: none;
@@ -53,7 +49,7 @@ const Logo = styled.h1`
   }
 
   [role] {
-    font-family: 'Raleway', serif;
+    font-family: "Raleway", serif;
     font-size: 1.3rem;
   }
 `;
@@ -63,25 +59,30 @@ export default function Layout({ children, title, metaDescription }) {
     <>
       <Container fluid className="min-vh-100">
         <GlobalStyle />
-        <Helmet htmlAttributes={{
-          lang: 'en',
-        }}>
+        <Helmet
+          htmlAttributes={{
+            lang: "en",
+          }}
+        >
           <meta charSet="utf-8" />
           <title>{title}</title>
           <meta name="description" content={metaDescription} />
           {/* <link rel="canonical" href="http://mysite.com/example" /> */}
         </Helmet>
         <Row>
-          <Menu/>  
+          <Menu />
         </Row>
         <Row className="logo-row">
-          <Logo><Link to='/'>Renee Ross Books</Link>
-            <div role="doc-subtitle">Gothic Romance the Way You Remember...</div>
+          <Logo>
+            <Link to="/">Renee Ross Books</Link>
+            <div role="doc-subtitle">
+              Gothic Romance the Way You Remember...
+            </div>
           </Logo>
         </Row>
         {children}
-        <Footer/>
+        <Footer />
       </Container>
     </>
-  )
+  );
 }
