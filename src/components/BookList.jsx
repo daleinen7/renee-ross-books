@@ -12,8 +12,8 @@ export default function BookList({ books }) {
       {books.map((book, idx) => {
         return (
           <Col
-            xxl={2}
-            xl={2}
+            xxl={4}
+            xl={4}
             lg={6}
             md={12}
             sm={12}
