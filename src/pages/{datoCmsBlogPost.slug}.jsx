@@ -1,5 +1,5 @@
 import React from 'react';
-import {graphql} from 'gatsby';
+import {graphql, Link} from 'gatsby';
 import { StructuredText } from 'react-datocms';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from '../components/Layout';
@@ -14,7 +14,10 @@ export default function BlogPost({data}) {
   return(
     <Layout title={`Renee Ross Books | ${data.datoCmsBlogPost.title}`} metaDescription={`"${data.datoCmsBlogPost.title}" by Author Renee Ross`}>
       <Row style={{ backgroundColor: "#000" }}>
-        <Col  md={{ span: 8, offset: 2 }} className="mt-5 mb-5">
+        <Col md={{ span: 8, offset: 2 }} className="mt-3 mb-1">
+          <Link to="/blog" style={{ color: "darkgrey", textDecoration: "none" }}>go back to blog post list</Link>
+        </Col>
+        <Col md={{ span: 8, offset: 2 }} className="mt-5 mb-5">
         <h2>{data.datoCmsBlogPost.title}</h2>
         <p>{moment(data.datoCmsBlogPost.meta.firstPublishedAt).format("MMM Do YY")}</p>
         <GatsbyImage
