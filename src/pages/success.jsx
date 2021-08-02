@@ -16,21 +16,21 @@ export default function success() {
           <p>Please enjoy this free novella!</p>
           <ul>
             <li className="p-2">
-              <a href={"../downloads/Terror_at_Fairmont_Hall.epub"} download>
+              <a href={"/Terror_at_Fairmont_Hall.epub"} download>
                 <Button variant="secondary" style={{ width: "200px" }}>
                   Download "Terror at Fairmont Hall" (epub)
                 </Button>
               </a>
             </li>
             <li className="p-2">
-              <a href={"../downloads/Terror_at_Fairmont_Hall.mobi"} download>
+              <a href={"/Terror_at_Fairmont_Hall.mobi"} download>
                 <Button variant="secondary" style={{ width: "200px" }}>
                   Download "Terror at Fairmont Hall" (mobi)
                 </Button>
               </a>
             </li>
             <li className="p-2">
-              <a href={"../downloads/Terror_at_Fairmont_Hall.pdf "} download>
+              <a href={"/Terror_at_Fairmont_Hall.pdf "} download>
                 <Button variant="secondary" style={{ width: "200px" }}>
                   Download "Terror at Fairmont Hall" (pdf)
                 </Button>
