@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from "gatsby";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faInstagramSquare,
   faFacebookSquare,
   faAmazon,
   faGoodreads,
@@ -51,12 +52,12 @@ export default function Menu() {
               <Nav.Link href="/blog">Blog</Nav.Link>
             </Nav>
             <Nav id="social-links" className="ms-auto">
-              <Nav.Link href="https://www.facebook.com/reneerossbooks">
-                <span className="screen-reader-text">facebook</span>
+              <Nav.Link href="https://www.instagram.com/reneerossbooks/">
+                <span className="screen-reader-text">Instagram</span>
                 <FontAwesomeIcon
-                  icon={faFacebookSquare}
+                  icon={faInstagramSquare}
                   size="lg"
-                  aria-label="facebook"
+                  aria-label="Instagram"
                 />
               </Nav.Link>{" "}
               &nbsp;
@@ -88,6 +89,15 @@ export default function Menu() {
                   icon={faPinterestSquare}
                   size="lg"
                   alt="Pintrest"
+                />
+              </Nav.Link>{" "}
+              &nbsp;
+              <Nav.Link href="https://www.facebook.com/reneerossbooks">
+                <span className="screen-reader-text">facebook</span>
+                <FontAwesomeIcon
+                  icon={faFacebookSquare}
+                  size="lg"
+                  aria-label="facebook"
                 />
               </Nav.Link>{" "}
               &nbsp;
