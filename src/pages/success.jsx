@@ -7,28 +7,30 @@ export default function success() {
     <Layout title="Subscribed" metaDescription="Success message">
       <Row style={{ backgroundColor: "#000" }}>
         <Col md={{ span: 8, offset: 2 }} className="mt-5 mb-5">
-          <h3 className="header"><span>You're Subscribed!</span></h3>
-          </Col>
+          <h3 className="header">
+            <span>You're Subscribed!</span>
+          </h3>
+        </Col>
         <Col md={{ span: 8, offset: 2 }} className="mt-2 mb-2 novella">
           <h2>Thank you for subscribing to our mailing list!</h2>
           <p>Please enjoy this free novella!</p>
           <ul>
             <li className="p-2">
-              <a href={"/public/Terror_at_Fairmont_Hall.epub"} download>
+              <a href={"/Terror_at_Fairmont_Hall.epub"} download>
                 <Button variant="secondary" style={{ width: "200px" }}>
                   Download "Terror at Fairmont Hall" (epub)
                 </Button>
               </a>
             </li>
             <li className="p-2">
-              <a href={"/public/Terror_at_Fairmont_Hall.mobi"} download>
+              <a href={"/Terror_at_Fairmont_Hall.mobi"} download>
                 <Button variant="secondary" style={{ width: "200px" }}>
                   Download "Terror at Fairmont Hall" (mobi)
                 </Button>
               </a>
             </li>
             <li className="p-2">
-              <a href={"/public/Terror_at_Fairmont_Hall.pdf "} download>
+              <a href={"/Terror_at_Fairmont_Hall.pdf "} download>
                 <Button variant="secondary" style={{ width: "200px" }}>
                   Download "Terror at Fairmont Hall" (pdf)
                 </Button>
