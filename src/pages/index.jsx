@@ -31,6 +31,7 @@ const IndexPage = ({ data }) => {
             <span>About the Author</span>
           </h3>
           <About
+            authorPhoto={data.allDatoCmsAuthorPhoto.nodes[0].authorPhoto}
             aboutTextIntro={data.allDatoCmsHomepage.nodes[0].landingPageText}
             aboutTextBody={data.allDatoCmsHomepage.nodes[0].landingPageBody}
           />
@@ -60,7 +61,14 @@ export const query = graphql`
         }
       }
     }
-    allDatoCmsBook(sort: { fields: meta___firstPublishedAt, order: DESC }) {
+    allDatoCmsAuthorPhoto {
+      nodes {
+        authorPhoto {
+          gatsbyImageData
+        }
+      }
+    }
+    allDatoCmsBook(sort: { fields: publishDate, order: DESC }) {
       nodes {
         title
         slug
