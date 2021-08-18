@@ -18,8 +18,11 @@ const about = ({ data }) => {
           <span>About the Author</span>
         </h3>
         <Col md={{ span: 8, offset: 2 }} className="mt-5 mb-5">
-          <StaticImage
-            src="../images/Author.jpg"
+          <img
+            src={
+              data.allDatoCmsAuthorPhoto.nodes[0].authorPhoto.gatsbyImageData
+                .images.fallback.src
+            }
             style={{ float: "left", marginRight: "1rem" }}
             alt="Author Renee Ross"
           />
@@ -46,6 +49,13 @@ export const query = graphql`
         }
         landingPageText {
           value
+        }
+      }
+    }
+    allDatoCmsAuthorPhoto {
+      nodes {
+        authorPhoto {
+          gatsbyImageData
         }
       }
     }
