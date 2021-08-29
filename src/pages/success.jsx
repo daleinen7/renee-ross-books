@@ -13,7 +13,11 @@ export default function success() {
         </Col>
         <Col md={{ span: 8, offset: 2 }} className="mt-2 mb-2 novella">
           <h2>Thank you for subscribing to our mailing list!</h2>
-          <p>Please enjoy this free novella!</p>
+          <p style={{ padding: "1rem 0" }}>
+            Please enjoy this free novella! In addition, you will be notified
+            about new releases, discounts or free promotions and occasional
+            giveaways.
+          </p>
           <ul>
             <li className="p-2">
               <a href={"/Terror_at_Fairmont_Hall.epub"} download>
