@@ -44,5 +44,10 @@
     "react-helmet": "^6.1.0",
     "sass": "^1.35.1",
     "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.16",
+    "@babel/preset-env": "7.16",
+    "babel-loader": "8.2"
   }
 }
