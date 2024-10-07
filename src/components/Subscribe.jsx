@@ -4,11 +4,11 @@ import { Card } from 'react-bootstrap';
 export default function Subscribe() {
 	useEffect(() => {
 		const script = document.createElement('script');
-		// script['data-form'] = '4b2750ed-163b-11ec-96e5-06b4694bee2a'
+		// script['data-form'] = '0e812940-80b3-11ef-b8ee-b9da8a9bf8bc'
 		script.async = true;
 		script.src =
-			'https://eomail5.com/form/4b2750ed-163b-11ec-96e5-06b4694bee2a.js';
-		script.setAttribute('data-form', '4b2750ed-163b-11ec-96e5-06b4694bee2a');
+			'https://eomail5.com/form/0e812940-80b3-11ef-b8ee-b9da8a9bf8bc.js';
+		script.setAttribute('data-form', '0e812940-80b3-11ef-b8ee-b9da8a9bf8bc');
 		console.log(script);
 		document.querySelector('#subscribe').append(script);
 	}, []);
