@@ -38,10 +38,7 @@ export const query = graphql`
         value
       }
       bookCover {
-        gatsbyImageData(
-          width: 340
-          placeholder: BLURRED
-        )
+        gatsbyImageData(placeholder: DOMINANT_COLOR)
       }
     }
   }
