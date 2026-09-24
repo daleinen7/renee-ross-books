@@ -14,6 +14,16 @@ module.exports = {
         apiToken: process.env.API_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [process.env.GA_MEASUREMENT_ID],
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+        },
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
