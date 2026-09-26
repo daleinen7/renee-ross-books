@@ -1,0 +1,70 @@
+---
+import type { Book } from '../lib/datocms.ts';
+import { HERO_COVER_SIZES } from '../lib/datocms.ts';
+import { splitTitle, hasPurchaseUrl } from '../lib/books.ts';
+import { publishYear } from '../lib/dates.ts';
+import DatoImage from './DatoImage.astro';
+
+interface Props {
+  book: Book;
+}
+const { book } = Astro.props;
+const { name, series } = splitTitle(book.title);
+---
+
+<article class="book">
+  <DatoImage image={book.cover} sizes={HERO_COVER_SIZES} loading="eager" class="cover" />
+  <div class="body">
+    <p class="label">{series ?? 'A novel'} · {publishYear(book.publishDate)}</p>
+    <h1>{name}</h1>
+    <div class="prose" set:html={book.descriptionHtml} />
+    <div class="actions">
+      {
+        hasPurchaseUrl(book.purchaseUrl) && (
+          <a class="button" href={book.purchaseUrl} rel="noopener">
+            Buy the book
+          </a>
+        )
+      }
+      <a class="button button--ghost" href="/#books">All books</a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .book {
+    display: grid;
+    gap: var(--space-5);
+    align-items: start;
+  }
+  .cover {
+    width: min(100%, 20rem);
+    justify-self: center;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-cover);
+  }
+  .body {
+    display: grid;
+    gap: var(--space-3);
+  }
+  .label {
+    margin: 0;
+  }
+  h1 {
+    font-size: var(--step-3);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+  @media (min-width: 48rem) {
+    .book {
+      grid-template-columns: 22rem 1fr;
+      gap: var(--space-6);
+    }
+    .cover {
+      width: 100%;
+    }
+  }
+</style>
