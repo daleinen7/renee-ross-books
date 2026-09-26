@@ -5,7 +5,7 @@ const kitAction = import.meta.env.PUBLIC_KIT_FORM_ACTION ?? '';
 <section class="subscribe" aria-labelledby="subscribe-title">
   <div class="copy">
     <p class="label">Newsletter</p>
-    <h2 id="subscribe-title">Join the mailing list</h2>
+    <h2 id="subscribe-title">Join my reader list</h2>
     <ul class="perks">
       <li>A free novella, <em>Terror at Fairmont Hall</em></li>
       <li>News about new releases, discounts, and giveaways</li>
@@ -24,15 +24,32 @@ const kitAction = import.meta.env.PUBLIC_KIT_FORM_ACTION ?? '';
     <input type="hidden" name="form-name" value="subscribe" />
     <p class="honeypot" aria-hidden="true">
       <label for="bot-field">Leave this field empty</label>
-      <input id="bot-field" name="bot-field" tabindex="-1" autocomplete="off" />
+      <input
+        id="bot-field"
+        name="bot-field"
+        tabindex="-1"
+        autocomplete="off"
+      />
     </p>
     <div class="field">
       <label for="subscribe-name">Name</label>
-      <input id="subscribe-name" type="text" name="name" autocomplete="name" required />
+      <input
+        id="subscribe-name"
+        type="text"
+        name="name"
+        autocomplete="name"
+        required
+      />
     </div>
     <div class="field">
       <label for="subscribe-email">Email</label>
-      <input id="subscribe-email" type="email" name="email" autocomplete="email" required />
+      <input
+        id="subscribe-email"
+        type="email"
+        name="email"
+        autocomplete="email"
+        required
+      />
     </div>
     <button class="button" type="submit">Sign up</button>
     <p class="error" role="alert" hidden></p>
@@ -40,19 +57,28 @@ const kitAction = import.meta.env.PUBLIC_KIT_FORM_ACTION ?? '';
 </section>
 
 <script>
-  const form = document.querySelector<HTMLFormElement>('form[name="subscribe"]');
+  const form = document.querySelector<HTMLFormElement>(
+    'form[name="subscribe"]',
+  );
 
   if (form) {
-    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const button = form.querySelector<HTMLButtonElement>(
+      'button[type="submit"]',
+    )!;
     const error = form.querySelector<HTMLParagraphElement>('.error')!;
     const kitAction = form.dataset.kitAction ?? '';
     const idle = button.textContent ?? 'Sign up';
 
     if (!kitAction && import.meta.env.DEV) {
-      console.warn('PUBLIC_KIT_FORM_ACTION is not set; subscribe will only reach Netlify Forms.');
+      console.warn(
+        'PUBLIC_KIT_FORM_ACTION is not set; subscribe will only reach Netlify Forms.',
+      );
     }
 
-    async function toKit(name: string, email: string): Promise<boolean> {
+    async function toKit(
+      name: string,
+      email: string,
+    ): Promise<boolean> {
       if (!kitAction) return false;
       const body = new FormData();
       body.append('email_address', email);
@@ -72,7 +98,9 @@ const kitAction = import.meta.env.PUBLIC_KIT_FORM_ACTION ?? '';
       data.forEach((value, key) => params.append(key, String(value)));
       const res = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
         body: params.toString(),
       });
       return res.ok;
@@ -80,14 +108,21 @@ const kitAction = import.meta.env.PUBLIC_KIT_FORM_ACTION ?? '';
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      const name = (form.elements.namedItem('name') as HTMLInputElement).value.trim();
-      const email = (form.elements.namedItem('email') as HTMLInputElement).value.trim();
+      const name = (
+        form.elements.namedItem('name') as HTMLInputElement
+      ).value.trim();
+      const email = (
+        form.elements.namedItem('email') as HTMLInputElement
+      ).value.trim();
 
       button.disabled = true;
       button.textContent = 'Signing up…';
       error.hidden = true;
 
-      const [kit, netlify] = await Promise.allSettled([toKit(name, email), toNetlify()]);
+      const [kit, netlify] = await Promise.allSettled([
+        toKit(name, email),
+        toNetlify(),
+      ]);
       const ok =
         (kit.status === 'fulfilled' && kit.value) ||
         (netlify.status === 'fulfilled' && netlify.value);
