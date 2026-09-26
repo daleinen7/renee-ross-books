@@ -30,7 +30,7 @@ const fullTitle = home ? SITE.name : `${title} | ${SITE.name}`;
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
-    {!home && <Header />}
+    {home ? <slot name="hero" /> : <Header />}
     <main id="main" tabindex="-1">
       <slot />
     </main>
