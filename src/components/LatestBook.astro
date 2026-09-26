@@ -23,8 +23,8 @@ const { name, series } = splitTitle(book.title);
       <a class="button button--ghost" href={`/${book.slug}`}>About this book</a>
       {
         hasPurchaseUrl(book.purchaseUrl) && (
-          <a class="button" href={book.purchaseUrl} rel="noopener">
-            Buy the book
+          <a class="button" href={book.purchaseUrl} target="_blank" rel="noopener noreferrer">
+            Buy the book<span class="visually-hidden"> (opens in a new tab)</span>
           </a>
         )
       }

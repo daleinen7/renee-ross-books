@@ -36,7 +36,7 @@ const { tagline } = Astro.props;
     display: grid;
     grid-template-rows: auto 1fr;
     min-height: 32rem;
-    overflow: hidden;
+    overflow: clip;
     isolation: isolate;
   }
   .art {
@@ -90,12 +90,17 @@ const { tagline } = Astro.props;
      while the hero exits the viewport. Extra height above keeps the edge covered. */
   @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
+      .hero {
+        view-timeline: --hero block;
+      }
       .art {
-        top: -20%;
-        height: 120%;
+        top: -30%;
+        height: 130%;
         object-position: 50% 45%;
-        animation: drift linear both;
-        animation-timeline: view();
+        animation-name: drift;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: --hero;
         animation-range: exit 0% exit 100%;
       }
     }
@@ -105,7 +110,7 @@ const { tagline } = Astro.props;
       transform: translateY(0);
     }
     to {
-      transform: translateY(20%);
+      transform: translateY(30%);
     }
   }
   @keyframes rise {
