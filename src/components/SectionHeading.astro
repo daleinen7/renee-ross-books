@@ -10,8 +10,8 @@ const Tag = `h${level}` as 'h2' | 'h3';
 ---
 
 <div class="section-heading">
-  <p class="label">{label}</p>
-  <Tag id={id}>{title}</Tag>
+  {label && <p class="label">{label}</p>}
+  {title && id && <Tag id={id}>{title}</Tag>}
 </div>
 
 <style>

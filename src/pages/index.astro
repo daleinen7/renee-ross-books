@@ -17,7 +17,11 @@ const homepage = (await getEntry('homepage', 'homepage'))!.data;
 const author = (await getEntry('authorPhoto', 'author-photo'))!.data;
 ---
 
-<Base title="Home" description={`${SITE.tagline}. Gothic romance novels by Renee Ross.`} home>
+<Base
+  title="Home"
+  description={`${SITE.tagline}. Gothic romance novels by Renee Ross.`}
+  home
+>
   <Hero slot="hero" tagline={SITE.tagline} />
 
   <div class="wrap">
@@ -29,11 +33,18 @@ const author = (await getEntry('authorPhoto', 'author-photo'))!.data;
   </div>
 
   <div class="wrap">
-    <AuthorIntro introHtml={homepage.introHtml} photo={author.photo} />
+    <AuthorIntro
+      introHtml={homepage.introHtml}
+      photo={author.photo}
+    />
   </div>
 
   <div class="wrap">
-    <SectionHeading label="The books" title="Every haunting, in order" id="books" />
+    <SectionHeading
+      label="Book List"
+      title="Every Mystery in Order"
+      id="books"
+    />
     <BookGrid books={books} />
   </div>
 </Base>
