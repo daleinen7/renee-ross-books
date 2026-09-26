@@ -41,3 +41,21 @@ test('image classes passed into DatoImage are not scoped away', () => {
     assert.doesNotMatch(css, new RegExp(`\\.${cls}\\[data-astro-cid-`), `.${cls} is scoped to a parent cid and will not reach the img`);
   }
 });
+
+for (const file of pages) {
+  const html = readFileSync(join(dist, file), 'utf8');
+  test(`${file} ships primary nav links in static markup with the disclosure open`, () => {
+    for (const href of ['href="/about"', 'href="/#books"', 'href="/blog"']) assert.match(html, new RegExp(href));
+    assert.match(html, /<details class="menu"[^>]*\sopen/);
+  });
+}
+
+test('book cards with a series carry it inside the heading link name', () => {
+  const html = readFileSync(join(dist, 'index.html'), 'utf8');
+  assert.match(html, /Hawthorne House<span class="visually-hidden"[^>]*>, Book Two<\/span>/);
+});
+
+test('no unpinned check script in package.json', () => {
+  const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+  assert.equal(pkg.scripts.check, undefined);
+});

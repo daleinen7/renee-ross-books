@@ -11,12 +11,14 @@ const { name, series } = splitTitle(book.title);
 ---
 
 <article class="card">
-  <a href={`/${book.slug}`} class="cover-link" aria-label={book.title}>
+  <a href={`/${book.slug}`} class="cover-link" tabindex="-1" aria-hidden="true">
     <DatoImage image={book.cover} class="cover" />
   </a>
   <div class="meta">
     {series && <p class="label">{series}</p>}
-    <h3><a href={`/${book.slug}`}>{name}</a></h3>
+    <h3>
+      <a href={`/${book.slug}`}>{name}{series && <span class="visually-hidden">, {series}</span>}</a>
+    </h3>
   </div>
 </article>
 
