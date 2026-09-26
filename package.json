@@ -19,6 +19,7 @@
     "@fontsource-variable/newsreader": "5.3.0",
     "astro": "7.3.5",
     "datocms-structured-text-to-html-string": "6.0.0",
-    "datocms-structured-text-utils": "6.0.1"
+    "datocms-structured-text-utils": "6.0.1",
+    "sharp": "0.35.4"
   }
 }

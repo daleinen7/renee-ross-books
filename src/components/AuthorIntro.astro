@@ -1,0 +1,45 @@
+---
+import type { ResponsiveImage } from '../lib/datocms.ts';
+import DatoImage from './DatoImage.astro';
+import SectionHeading from './SectionHeading.astro';
+
+interface Props {
+  introHtml: string;
+  photo: ResponsiveImage;
+}
+const { introHtml, photo } = Astro.props;
+---
+
+<section class="author" aria-labelledby="author-title">
+  <DatoImage image={photo} class="photo" />
+  <div class="body">
+    <SectionHeading label="About the author" title="Renee Ross" id="author-title" />
+    <div class="prose" set:html={introHtml} />
+    <a class="button button--ghost" href="/about">More about Renee</a>
+  </div>
+</section>
+
+<style>
+  .author {
+    display: grid;
+    gap: var(--space-5);
+    align-items: start;
+  }
+  .photo {
+    width: min(100%, 16rem);
+    border-radius: 50%;
+    justify-self: center;
+    box-shadow: var(--shadow-cover);
+  }
+  .body {
+    display: grid;
+    gap: var(--space-3);
+    justify-items: start;
+  }
+  @media (min-width: 48rem) {
+    .author {
+      grid-template-columns: 16rem 1fr;
+      gap: var(--space-6);
+    }
+  }
+</style>
