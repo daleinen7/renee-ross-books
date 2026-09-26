@@ -1,0 +1,47 @@
+---
+import type { Post } from '../lib/datocms.ts';
+import { formatDate } from '../lib/dates.ts';
+
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+---
+
+<article class="post-card">
+  <p class="label"><time datetime={post.publishedAt}>{formatDate(post.publishedAt)}</time></p>
+  <h2><a href={`/${post.slug}`}>{post.title}</a></h2>
+  <p class="excerpt">{post.excerpt}</p>
+  <p class="more"><a href={`/${post.slug}`} aria-label={`Read ${post.title}`}>Read the post</a></p>
+</article>
+
+<style>
+  .post-card {
+    display: grid;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+  }
+  .label {
+    margin: 0;
+  }
+  h2 {
+    font-size: var(--step-2);
+  }
+  h2 a {
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+  h2 a:hover {
+    color: var(--color-accent-hover);
+  }
+  .excerpt {
+    margin: 0;
+    color: var(--color-ink-muted);
+  }
+  .more {
+    margin: var(--space-2) 0 0;
+  }
+</style>
