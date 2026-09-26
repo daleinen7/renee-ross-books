@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import PageIntro from '../components/PageIntro.astro';
+
+const downloads = [
+  { label: 'EPUB (most e-readers)', href: '/Terror_at_Fairmont_Hall.epub' },
+  { label: 'MOBI (older Kindles)', href: '/Terror_at_Fairmont_Hall.mobi' },
+  { label: 'PDF', href: '/Terror_at_Fairmont_Hall.pdf' },
+];
+---
+
+<Base title="You're subscribed" description="Thank you for subscribing to Renee Ross Books.">
+  <div class="wrap">
+    <PageIntro label="Thank you" title="You're on the list" />
+    <p>
+      Please enjoy your free novella, <em>Terror at Fairmont Hall</em>. You'll also hear about new
+      releases, discounts, free promotions, and the occasional giveaway.
+    </p>
+    <ul class="downloads">
+      {
+        downloads.map((d) => (
+          <li>
+            <a class="button" href={d.href} download>
+              Download {d.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .wrap {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-3) 0;
+  }
+  .downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin: var(--space-4) 0 0;
+    padding: 0;
+    list-style: none;
+    max-width: none;
+  }
+  @media (min-width: 48rem) {
+    .wrap {
+      padding: var(--space-7) var(--space-4) 0;
+    }
+  }
+</style>

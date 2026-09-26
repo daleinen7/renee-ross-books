@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageIntro from '../components/PageIntro.astro';
+import PostCard from '../components/PostCard.astro';
+
+const posts = (await getCollection('posts'))
+  .map((e) => e.data)
+  .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+---
+
+<Base title="Blog" description="Essays and news from gothic romance author Renee Ross.">
+  <div class="wrap">
+    <PageIntro label="Blog" title="Notes from the castle" />
+    <ul class="posts">
+      {
+        posts.map((post) => (
+          <li>
+            <PostCard post={post} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .wrap {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-3) 0;
+  }
+  .posts {
+    display: grid;
+    gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-width: none;
+  }
+  @media (min-width: 48rem) {
+    .wrap {
+      padding: var(--space-7) var(--space-4) 0;
+    }
+    .posts {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

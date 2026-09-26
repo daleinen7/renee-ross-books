@@ -1,54 +1,24 @@
 {
   "name": "renee-ross-books",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Renee Ross Books",
-  "author": "daleinen7",
-  "keywords": [
-    "gatsby"
-  ],
+  "type": "module",
+  "packageManager": "pnpm@12.6.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "node --test \"tests/**/*.test.ts\""
   },
   "dependencies": {
-    "@fontsource/raleway": "^4.4.5",
-    "@fontsource/tangerine": "^4.4.5",
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-brands-svg-icons": "^5.15.3",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/react-fontawesome": "^0.1.14",
-    "babel-plugin-styled-components": "^1.12.0",
-    "bootstrap": "^5.0.1",
-    "dotenv": "^10.0.0",
-    "gatsby": "^3.8.1",
-    "gatsby-plugin-google-fonts": "^1.0.1",
-    "gatsby-plugin-google-gtag": "3.15.0",
-    "gatsby-plugin-image": "^1.7.1",
-    "gatsby-plugin-manifest": "^3.7.1",
-    "gatsby-plugin-react-helmet": "^4.7.1",
-    "gatsby-plugin-sass": "^4.7.1",
-    "gatsby-plugin-sharp": "^3.7.1",
-    "gatsby-plugin-styled-components": "^4.7.1",
-    "gatsby-source-datocms": "^2.6.16",
-    "gatsby-source-filesystem": "^3.7.1",
-    "gatsby-transformer-remark": "^4.6.0",
-    "gatsby-transformer-sharp": "^3.7.1",
-    "moment": "^2.29.1",
-    "react": "^17.0.1",
-    "react-bootstrap": "^1.6.1",
-    "react-datocms": "^1.6.3",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "sass": "^1.35.1",
-    "styled-components": "^5.3.0"
-  },
-  "devDependencies": {
-    "@babel/core": "7.16",
-    "@babel/preset-env": "7.16",
-    "babel-loader": "8.2"
+    "@fontsource-variable/bodoni-moda": "5.3.0",
+    "@fontsource-variable/newsreader": "5.3.0",
+    "astro": "7.3.5",
+    "datocms-structured-text-to-html-string": "6.0.0",
+    "datocms-structured-text-utils": "6.0.1",
+    "sharp": "0.35.4"
   }
 }

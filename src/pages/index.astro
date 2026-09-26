@@ -1,0 +1,63 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import LatestBook from '../components/LatestBook.astro';
+import Subscribe from '../components/Subscribe.astro';
+import AuthorIntro from '../components/AuthorIntro.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import BookGrid from '../components/BookGrid.astro';
+import { SITE } from '../lib/site.ts';
+
+const books = (await getCollection('books'))
+  .map((e) => e.data)
+  .sort((a, b) => b.publishDate.localeCompare(a.publishDate));
+const latest = books[0];
+const homepage = (await getEntry('homepage', 'homepage'))!.data;
+const author = (await getEntry('authorPhoto', 'author-photo'))!.data;
+---
+
+<Base
+  title="Home"
+  description={`${SITE.tagline}. Gothic romance novels by Renee Ross.`}
+  home
+>
+  <Hero slot="hero" tagline={SITE.tagline} />
+
+  <div class="wrap">
+    <LatestBook book={latest} />
+  </div>
+
+  <div class="wrap">
+    <Subscribe />
+  </div>
+
+  <div class="wrap">
+    <AuthorIntro
+      introHtml={homepage.introHtml}
+      photo={author.photo}
+    />
+  </div>
+
+  <div class="wrap">
+    <SectionHeading
+      label="Book List"
+      title="Every Mystery in Order"
+      id="books"
+    />
+    <BookGrid books={books} />
+  </div>
+</Base>
+
+<style>
+  .wrap {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-3) 0;
+  }
+  @media (min-width: 48rem) {
+    .wrap {
+      padding: var(--space-7) var(--space-4) 0;
+    }
+  }
+</style>
