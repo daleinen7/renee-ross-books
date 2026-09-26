@@ -20,10 +20,5 @@
     "astro": "7.3.5",
     "datocms-structured-text-to-html-string": "6.0.0",
     "datocms-structured-text-utils": "6.0.1"
-  },
-  "pnpm": {
-    "allowBuilds": {
-      "esbuild": true
-    }
   }
 }
