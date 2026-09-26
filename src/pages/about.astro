@@ -1,0 +1,50 @@
+---
+import { getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageIntro from '../components/PageIntro.astro';
+import DatoImage from '../components/DatoImage.astro';
+
+const homepage = (await getEntry('homepage', 'homepage'))!.data;
+const author = (await getEntry('authorPhoto', 'author-photo'))!.data;
+---
+
+<Base title="About" description="About gothic romance author Renee Ross.">
+  <div class="wrap">
+    <PageIntro label="About the author" title="Renee Ross" />
+    <div class="about">
+      <DatoImage image={author.photo} loading="eager" class="photo" />
+      <div class="prose">
+        <Fragment set:html={homepage.introHtml} />
+        <Fragment set:html={homepage.bodyHtml} />
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .wrap {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-3) 0;
+  }
+  .about {
+    display: grid;
+    gap: var(--space-5);
+    align-items: start;
+  }
+  .photo {
+    width: min(100%, 16rem);
+    border-radius: 50%;
+    justify-self: center;
+    box-shadow: var(--shadow-cover);
+  }
+  @media (min-width: 48rem) {
+    .wrap {
+      padding: var(--space-7) var(--space-4) 0;
+    }
+    .about {
+      grid-template-columns: 16rem 1fr;
+      gap: var(--space-6);
+    }
+  }
+</style>

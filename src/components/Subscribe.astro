@@ -1,0 +1,171 @@
+---
+const kitAction = import.meta.env.PUBLIC_KIT_FORM_ACTION ?? '';
+---
+
+<section class="subscribe" aria-labelledby="subscribe-title">
+  <div class="copy">
+    <p class="label">Newsletter</p>
+    <h2 id="subscribe-title">Join the mailing list</h2>
+    <ul class="perks">
+      <li>A free novella, <em>Terror at Fairmont Hall</em></li>
+      <li>News about new releases, discounts, and giveaways</li>
+    </ul>
+  </div>
+
+  <form
+    class="form"
+    name="subscribe"
+    method="POST"
+    action="/success"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    data-kit-action={kitAction}
+  >
+    <input type="hidden" name="form-name" value="subscribe" />
+    <p class="honeypot" aria-hidden="true">
+      <label for="bot-field">Leave this field empty</label>
+      <input id="bot-field" name="bot-field" tabindex="-1" autocomplete="off" />
+    </p>
+    <div class="field">
+      <label for="subscribe-name">Name</label>
+      <input id="subscribe-name" type="text" name="name" autocomplete="name" required />
+    </div>
+    <div class="field">
+      <label for="subscribe-email">Email</label>
+      <input id="subscribe-email" type="email" name="email" autocomplete="email" required />
+    </div>
+    <button class="button" type="submit">Sign up</button>
+    <p class="error" role="alert" hidden></p>
+  </form>
+</section>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('form[name="subscribe"]');
+
+  if (form) {
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const error = form.querySelector<HTMLParagraphElement>('.error')!;
+    const kitAction = form.dataset.kitAction ?? '';
+    const idle = button.textContent ?? 'Sign up';
+
+    if (!kitAction && import.meta.env.DEV) {
+      console.warn('PUBLIC_KIT_FORM_ACTION is not set; subscribe will only reach Netlify Forms.');
+    }
+
+    async function toKit(name: string, email: string): Promise<boolean> {
+      if (!kitAction) return false;
+      const body = new FormData();
+      body.append('email_address', email);
+      body.append('fields[first_name]', name);
+      const res = await fetch(kitAction, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body,
+      });
+      const json = (await res.json()) as { status?: string };
+      return res.ok && json.status !== 'failed';
+    }
+
+    async function toNetlify(): Promise<boolean> {
+      const data = new FormData(form!);
+      const params = new URLSearchParams();
+      data.forEach((value, key) => params.append(key, String(value)));
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString(),
+      });
+      return res.ok;
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const name = (form.elements.namedItem('name') as HTMLInputElement).value.trim();
+      const email = (form.elements.namedItem('email') as HTMLInputElement).value.trim();
+
+      button.disabled = true;
+      button.textContent = 'Signing up…';
+      error.hidden = true;
+
+      const [kit, netlify] = await Promise.allSettled([toKit(name, email), toNetlify()]);
+      const ok =
+        (kit.status === 'fulfilled' && kit.value) ||
+        (netlify.status === 'fulfilled' && netlify.value);
+
+      if (ok) {
+        window.location.assign('/success');
+        return;
+      }
+      button.disabled = false;
+      button.textContent = idle;
+      error.textContent = 'Something went wrong. Please try again.';
+      error.hidden = false;
+    });
+  }
+</script>
+
+<style>
+  .subscribe {
+    display: grid;
+    gap: var(--space-5);
+    padding: var(--space-5);
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+  }
+  .copy {
+    display: grid;
+    gap: var(--space-2);
+  }
+  .label {
+    margin: 0;
+  }
+  .perks {
+    margin: var(--space-2) 0 0;
+    padding-left: var(--space-4);
+    color: var(--color-ink-muted);
+  }
+  .form {
+    display: grid;
+    gap: var(--space-3);
+    align-content: start;
+  }
+  .field {
+    display: grid;
+    gap: var(--space-1);
+  }
+  label {
+    font-weight: 500;
+  }
+  input:not([type='hidden']) {
+    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    font: inherit;
+    color: var(--color-ink);
+    background: var(--color-ground);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+  }
+  .honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .error {
+    margin: 0;
+    color: var(--color-danger);
+    font-weight: 500;
+  }
+  .error[hidden] {
+    display: none;
+  }
+  @media (min-width: 48rem) {
+    .subscribe {
+      grid-template-columns: 1fr 1fr;
+      padding: var(--space-6);
+    }
+  }
+</style>

@@ -3,6 +3,7 @@ import { getCollection, getEntry } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import LatestBook from '../components/LatestBook.astro';
+import Subscribe from '../components/Subscribe.astro';
 import AuthorIntro from '../components/AuthorIntro.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import BookGrid from '../components/BookGrid.astro';
@@ -21,6 +22,10 @@ const author = (await getEntry('authorPhoto', 'author-photo'))!.data;
 
   <div class="wrap">
     <LatestBook book={latest} />
+  </div>
+
+  <div class="wrap">
+    <Subscribe />
   </div>
 
   <div class="wrap">
