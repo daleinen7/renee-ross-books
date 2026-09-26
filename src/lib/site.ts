@@ -17,7 +17,6 @@ export const SITE = {
     },
     { label: 'Pinterest', href: 'https://www.pinterest.com/ReneeRossBooks/', icon: 'pinterest' },
     { label: 'Facebook', href: 'https://www.facebook.com/reneerossbooks', icon: 'facebook' },
-    { label: 'X', href: 'https://twitter.com/reneerossbooks', icon: 'x' },
     { label: 'Email', href: 'mailto:reneerossbooks@gmail.com', icon: 'email' },
   ],
 } as const;
