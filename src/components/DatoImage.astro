@@ -1,0 +1,26 @@
+---
+import type { ResponsiveImage } from '../lib/datocms.ts';
+
+interface Props {
+  image: ResponsiveImage;
+  sizes?: string;
+  loading?: 'lazy' | 'eager';
+  class?: string;
+}
+const { image, sizes = image.sizes, loading = 'lazy', class: className } = Astro.props;
+// The inline style is a per-image blur placeholder data URI from DatoCMS, not a design value.
+const placeholder = image.base64 ? `background: url(${image.base64}) center / cover no-repeat` : undefined;
+---
+
+<img
+  src={image.src}
+  srcset={image.srcSet}
+  sizes={sizes}
+  width={image.width}
+  height={image.height}
+  alt={image.alt}
+  loading={loading}
+  decoding="async"
+  class={className}
+  style={placeholder}
+/>

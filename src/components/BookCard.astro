@@ -1,0 +1,67 @@
+---
+import type { Book } from '../lib/datocms.ts';
+import { splitTitle } from '../lib/books.ts';
+import DatoImage from './DatoImage.astro';
+
+interface Props {
+  book: Book;
+}
+const { book } = Astro.props;
+const { name, series } = splitTitle(book.title);
+---
+
+<article class="card">
+  <a href={`/${book.slug}`} class="cover-link" tabindex="-1" aria-hidden="true">
+    <DatoImage image={book.cover} class="cover" />
+  </a>
+  <div class="meta">
+    {series && <p class="label">{series}</p>}
+    <h3>
+      <a href={`/${book.slug}`}>{name}{series && <span class="visually-hidden">, {series}</span>}</a>
+    </h3>
+  </div>
+</article>
+
+<style>
+  .card {
+    display: grid;
+    gap: var(--space-3);
+  }
+  .cover-link {
+    display: block;
+    border-radius: var(--radius);
+    transition: outline-color var(--duration-fast);
+    outline: 1px solid transparent;
+  }
+  .cover-link:hover {
+    outline-color: var(--color-accent);
+  }
+  .cover-link:focus-visible {
+    outline: var(--ring);
+    outline-offset: 2px;
+  }
+  .cover-link :global(.cover) {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-cover);
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+  }
+  .meta {
+    display: grid;
+    gap: var(--space-1);
+  }
+  .label {
+    margin: 0;
+  }
+  h3 {
+    font-size: var(--step-1);
+  }
+  h3 a {
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+  h3 a:hover {
+    color: var(--color-accent-hover);
+  }
+</style>

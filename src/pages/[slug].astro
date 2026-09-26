@@ -1,0 +1,47 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import BookDetail from '../components/BookDetail.astro';
+import PostDetail from '../components/PostDetail.astro';
+import { buildSlugPaths, type SlugKind } from '../lib/routes.ts';
+
+export async function getStaticPaths() {
+  const books = (await getCollection('books')).map((e) => e.data);
+  const posts = (await getCollection('posts')).map((e) => e.data);
+  return buildSlugPaths(books, posts);
+}
+
+interface Props {
+  kind: SlugKind;
+}
+const { kind } = Astro.props;
+const { slug } = Astro.params;
+
+const book = kind === 'book' ? (await getEntry('books', slug!))!.data : null;
+const post = kind === 'post' ? (await getEntry('posts', slug!))!.data : null;
+
+const title = book ? book.title : post!.title;
+const description = book
+  ? `${book.title}, a gothic romance by Renee Ross.`
+  : post!.excerpt || `${post!.title}, from the Renee Ross Books blog.`;
+---
+
+<Base title={title} description={description}>
+  <div class="wrap">
+    {book && <BookDetail book={book} />}
+    {post && <PostDetail post={post} />}
+  </div>
+</Base>
+
+<style>
+  .wrap {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-3) 0;
+  }
+  @media (min-width: 48rem) {
+    .wrap {
+      padding: var(--space-7) var(--space-4) 0;
+    }
+  }
+</style>

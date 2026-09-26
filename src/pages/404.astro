@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import PageIntro from '../components/PageIntro.astro';
+---
+
+<Base title="Page not found" description="This page could not be found.">
+  <div class="wrap">
+    <PageIntro label="404" title="This page has wandered off into the fog" />
+    <p>The page you were looking for isn't here. It may have been moved, or the link may be old.</p>
+    <p class="actions">
+      <a class="button" href="/">Back to the front door</a>
+      <a class="button button--ghost" href="/#books">Browse the books</a>
+    </p>
+  </div>
+</Base>
+
+<style>
+  .wrap {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-3) 0;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    max-width: none;
+  }
+  @media (min-width: 48rem) {
+    .wrap {
+      padding: var(--space-7) var(--space-4) 0;
+    }
+  }
+</style>

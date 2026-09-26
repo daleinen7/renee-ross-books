@@ -1,0 +1,22 @@
+---
+const id = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+---
+
+{
+  id && (
+    <script is:inline define:vars={{ id }}>
+      if (navigator.doNotTrack !== '1' && window.doNotTrack !== '1') {
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () {
+          window.dataLayer.push(arguments);
+        };
+        window.gtag('js', new Date());
+        window.gtag('config', id, { anonymize_ip: true });
+      }
+    </script>
+  )
+}

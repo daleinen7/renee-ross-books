@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import { SITE } from '../lib/site.ts';
+
+interface Props {
+  title: string;
+  description: string;
+  home?: boolean;
+}
+const { title, description, home = false } = Astro.props;
+const fullTitle = home ? SITE.name : `${title} | ${SITE.name}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/icon-512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <Analytics />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    {home ? <slot name="hero" /> : <Header />}
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .skip {
+    position: absolute;
+    top: var(--space-2);
+    left: var(--space-2);
+    z-index: 1;
+    padding: var(--space-2) var(--space-3);
+    background: var(--color-accent);
+    color: var(--color-ground);
+    border-radius: var(--radius);
+    transform: translateY(-200%);
+    transition: transform var(--duration-fast);
+  }
+  .skip:focus {
+    transform: none;
+  }
+  main:focus {
+    outline: none;
+  }
+</style>
