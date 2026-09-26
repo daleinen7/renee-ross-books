@@ -12,7 +12,7 @@ const { post } = Astro.props;
   <p class="label"><time datetime={post.publishedAt}>{formatDate(post.publishedAt)}</time></p>
   <h2><a href={`/${post.slug}`}>{post.title}</a></h2>
   <p class="excerpt">{post.excerpt}</p>
-  <p class="more"><a href={`/${post.slug}`} aria-label={`Read ${post.title}`}>Read the post</a></p>
+  <p class="more"><a href={`/${post.slug}`}>Read the post<span class="visually-hidden">: {post.title}</span></a></p>
 </article>
 
 <style>

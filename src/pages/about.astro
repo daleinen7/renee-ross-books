@@ -32,7 +32,7 @@ const author = (await getEntry('authorPhoto', 'author-photo'))!.data;
     gap: var(--space-5);
     align-items: start;
   }
-  .photo {
+  .about :global(.photo) {
     width: min(100%, 16rem);
     border-radius: 50%;
     justify-self: center;

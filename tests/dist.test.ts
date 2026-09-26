@@ -28,3 +28,16 @@ for (const file of pages) {
     assert.doesNotMatch(html, /TKTK|lorem ipsum/i);
   });
 }
+
+test('image classes passed into DatoImage are not scoped away', () => {
+  const cssDir = join(dist, '_astro');
+  const css = existsSync(cssDir)
+    ? readdirSync(cssDir)
+        .filter((f) => f.endsWith('.css'))
+        .map((f) => readFileSync(join(cssDir, f), 'utf8'))
+        .join('\n')
+    : '';
+  for (const cls of ['cover', 'photo', 'figure']) {
+    assert.doesNotMatch(css, new RegExp(`\\.${cls}\\[data-astro-cid-`), `.${cls} is scoped to a parent cid and will not reach the img`);
+  }
+});

@@ -37,7 +37,7 @@ const { name, series } = splitTitle(book.title);
     gap: var(--space-5);
     align-items: start;
   }
-  .cover {
+  .book :global(.cover) {
     width: min(100%, 20rem);
     justify-self: center;
     border-radius: var(--radius);
@@ -63,7 +63,7 @@ const { name, series } = splitTitle(book.title);
       grid-template-columns: 22rem 1fr;
       gap: var(--space-6);
     }
-    .cover {
+    .book :global(.cover) {
       width: 100%;
     }
   }
