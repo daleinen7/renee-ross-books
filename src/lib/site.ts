@@ -1,10 +1,14 @@
 export const SITE = {
   name: 'Renee Ross Books',
-  tagline: 'Gothic Romance the Way You Remember It',
+  tagline: 'Vintage Gothic Romance - Revived',
   description: 'Gothic romance novels by author Renee Ross.',
   email: 'reneerossbooks@gmail.com',
   social: [
-    { label: 'Instagram', href: 'https://www.instagram.com/reneerossbooks/', icon: 'instagram' },
+    {
+      label: 'Instagram',
+      href: 'https://www.instagram.com/reneerossbooks/',
+      icon: 'instagram',
+    },
     {
       label: 'Amazon author page',
       href: 'https://www.amazon.com/Renee-Ross/e/B007WDCBI2',
@@ -15,9 +19,21 @@ export const SITE = {
       href: 'https://www.goodreads.com/author/show/6037599.Renee_Ross',
       icon: 'goodreads',
     },
-    { label: 'Pinterest', href: 'https://www.pinterest.com/ReneeRossBooks/', icon: 'pinterest' },
-    { label: 'Facebook', href: 'https://www.facebook.com/reneerossbooks', icon: 'facebook' },
-    { label: 'Email', href: 'mailto:reneerossbooks@gmail.com', icon: 'email' },
+    {
+      label: 'Pinterest',
+      href: 'https://www.pinterest.com/ReneeRossBooks/',
+      icon: 'pinterest',
+    },
+    {
+      label: 'Facebook',
+      href: 'https://www.facebook.com/reneerossbooks',
+      icon: 'facebook',
+    },
+    {
+      label: 'Email',
+      href: 'mailto:reneerossbooks@gmail.com',
+      icon: 'email',
+    },
   ],
 } as const;
 
