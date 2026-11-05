@@ -21,7 +21,7 @@ for (const file of pages) {
     assert.match(html, /<main id="main"/);
   });
   test(`${file} has no Gatsby, Bootstrap, or old font residue`, () => {
-    assert.doesNotMatch(html, /gatsby|bootstrap|styled-components|Poppins|Tangerine|Raleway|Open\+Sans/i);
+    assert.doesNotMatch(html, /gatsby|bootstrap|styled-components|Poppins|Raleway|Open\+Sans/i);
   });
   test(`${file} has no empty href or placeholder marker`, () => {
     assert.doesNotMatch(html, /href=""/);

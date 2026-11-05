@@ -6,7 +6,6 @@
 :root {
   /* Color: moonlit ground, bone ink, antique gold accent */
   --color-ground: #0d0c12;
-  --color-ground-rgb: 13 12 18;
   --color-surface: #17161f;
   --color-ink: #ece7dc;
   --color-ink-muted: #b3ac9f;
@@ -18,12 +17,15 @@
   /* Type */
   --font-display: 'Bodoni Moda Variable', 'Bodoni MT', 'Didot', Georgia, serif;
   --font-body: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+  --font-script: 'Tangerine', 'Snell Roundhand', 'Apple Chancery', cursive;
   --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.875rem);
   --step-0: clamp(1.05rem, 1rem + 0.25vw, 1.2rem);
   --step-1: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
   --step-2: clamp(1.55rem, 1.35rem + 1vw, 2rem);
   --step-3: clamp(2rem, 1.6rem + 2vw, 3rem);
   --step-4: clamp(2.8rem, 2rem + 4vw, 5rem);
+  --step-5: clamp(3rem, 0.25rem + 15vw, 8rem);
+  --step-5-overlay: clamp(2.75rem, 0.5rem + 5.5vw, 5.5rem);
   --leading-tight: 1.1;
   --leading-body: 1.6;
   --tracking-label: 0.12em;
@@ -42,6 +44,7 @@
   /* Misc */
   --radius: 0.25rem;
   --shadow-cover: 0 1rem 2.5rem rgb(0 0 0 / 0.6);
+  --shadow-text: 0 0.125rem 0.25rem rgb(0 0 0 / 0.95), 0 0 0.5rem rgb(0 0 0 / 0.95), 0 0 0.75rem rgb(0 0 0 / 0.9), 0 0 1.5rem rgb(0 0 0 / 0.8);
   --ring: 2px solid var(--color-accent-hover);
   --duration-fast: 150ms;
   --duration-slow: 600ms;
